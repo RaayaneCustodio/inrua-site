@@ -4,7 +4,7 @@ import { HeroBanner } from "@/components/hero-banner"
 import { DocumentCard } from "@/components/document-card"
 import { Card } from "@/components/ui/card"
 import { Check } from "lucide-react"
-import { TeamCard } from "@/components/team-card" // Import the new TeamCard component
+import { TeamCard } from "@/components/team-card"
 
 export default function SobrePage() {
   const values = [
@@ -35,58 +35,59 @@ export default function SobrePage() {
     },
   ]
 
+  // DOCUMENTOS - Nomes Exatos (Maiúsculas/Minúsculas importam)
   const documents = [
     {
       title: "Estatuto Social",
       description: "Documento oficial que define os objetivos e governança da organização",
-      fileUrl: "#",
-      fileName: "estatuto-social.pdf",
-      date: "Fevereiro 2024",
+      fileUrl: "/EstatutoINRua.pdf", 
+      fileName: "EstatutoINRua.pdf",
+      date: "Vigente",
     },
     {
-      title: "Atas de Assembleia",
-      description: "Registros das assembleias gerais e decisões tomadas",
-      fileUrl: "#",
-      fileName: "atas-assembleia.pdf",
-      date: "Dezembro 2024",
+      title: "Ata de Eleição da Diretoria",
+      description: "Ata da Assembleia Geral Ordinária - Mandato 2023/2026",
+      fileUrl: "/Diretoria.pdf", 
+      fileName: "Diretoria.pdf",
+      date: "Março 2023",
     },
     {
-      title: "Certificado de Registro de Pessoa Jurídica",
-      description: "Documento comprobatório do registro legal da organização",
-      fileUrl: "#",
-      fileName: "registro-pj.pdf",
-      date: "Dezembro 2023",
+      title: "Cartão CNPJ",
+      description: "Comprovante de Inscrição e Situação Cadastral Ativa",
+      fileUrl: "/CNPJInrua.pdf",
+      fileName: "CNPJInrua.pdf",
+      date: "Ativo",
     },
     {
-      title: "CND - Certidão Negativa de Débitos",
+      title: "CND - Certidão Negativa Federal",
       description: "Comprovação de situação fiscal regular junto à Receita Federal",
-      fileUrl: "#",
-      fileName: "cnd.pdf",
-      date: "Novembro 2024",
+      fileUrl: "#", 
+      fileName: "aguardando-emissao.pdf",
+      date: "Em atualização",
     },
     {
-      title: "FGTS - Contribuição",
-      description: "Comprovação de contribuições ao Fundo de Garantia do Tempo de Serviço",
-      fileUrl: "#",
-      fileName: "fgts.pdf",
-      date: "Novembro 2024",
+      title: "Certificado de Regularidade FGTS",
+      description: "Comprovação de regularidade junto à Caixa Econômica Federal",
+      fileUrl: "#", 
+      fileName: "aguardando-emissao.pdf",
+      date: "Em atualização",
     },
     {
-      title: "INSS - Contribuições",
-      description: "Comprovação de contribuições ao Instituto Nacional de Seguridade Social",
-      fileUrl: "#",
-      fileName: "inss.pdf",
-      date: "Novembro 2024",
+      title: "CNDT - Débitos Trabalhistas",
+      description: "Certidão Negativa de Débitos Trabalhistas",
+      fileUrl: "#", 
+      fileName: "aguardando-emissao.pdf",
+      date: "Em atualização",
     },
   ]
 
   const team = [
-    { name: "Dr. João Silva", role: "Presidente/Diretor Executivo", area: "Estratégia e Gestão" },
-    { name: "Profa. Maria Santos", role: "Diretora de Programas", area: "Programas Sociais" },
-    { name: "Eng. Carlos Oliveira", role: "Diretor Administrativo-Financeiro", area: "Administração e Finanças" },
-    { name: "Coordenador Técnico", role: "Coordenador de Projetos", area: "Execução e Monitoramento" },
-    { name: "Especialista Social", role: "Gestor de Impacto", area: "Mensuração e Avaliação" },
-    { name: "Assistente Administrativo", role: "Apoio Administrativo", area: "Suporte Operacional" },
+    { name: "Leonildo Jose Monteiro Filho", role: "Presidente", area: "Diretoria Executiva" },
+    { name: "Roselaine Mendes Ferreira", role: "Vice-Presidente", area: "Diretoria Executiva" },
+    { name: "Marcel Jeronymo Lima Oliveira", role: "Tesoureiro", area: "Diretoria Financeira" },
+    { name: "Ana Paula Monteiro de Oliveira", role: "Secretária", area: "Diretoria Administrativa" },
+    { name: "Equipe Técnica", role: "Corpo Técnico", area: "Serviço Social e Psicologia" },
+    { name: "Voluntários", role: "Apoio Operacional", area: "Ações de Rua" },
   ]
 
   return (
@@ -130,11 +131,11 @@ export default function SobrePage() {
       </section>
 
       {/* Missão, Visão e Valores */}
-      <section className="container-max section-padding">
+      <section className="container-max section-padding bg-muted/30">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Missão, Visão e Valores</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-          <Card className="p-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto px-4">
+          <Card className="p-8 h-full">
             <h3 className="text-2xl font-bold text-primary mb-4">Missão</h3>
             <p className="text-muted-foreground leading-relaxed">
               Promover defesa, assistência e apoio aos direitos humanos da população em situação de rua, garantindo
@@ -143,7 +144,7 @@ export default function SobrePage() {
             </p>
           </Card>
 
-          <Card className="p-8">
+          <Card className="p-8 h-full">
             <h3 className="text-2xl font-bold text-primary mb-4">Visão</h3>
             <p className="text-muted-foreground leading-relaxed">
               Ser referência nacional na defesa e promoção dos direitos humanos da população em situação de rua,
@@ -152,8 +153,8 @@ export default function SobrePage() {
             </p>
           </Card>
 
-          <Card className="p-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">Valores Fundamentais</h3>
+          <Card className="p-8 h-full">
+            <h3 className="text-2xl font-bold text-primary mb-4">Valores</h3>
             <p className="text-muted-foreground leading-relaxed">
               Dignidade humana, justiça social, transparência, integridade, sustentabilidade e colaboração em rede com
               movimentos sociais, governos e organizações parceiras para amplificar impacto.
@@ -182,7 +183,7 @@ export default function SobrePage() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="container-max section-padding">
+      <section className="container-max section-padding bg-muted/30">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Nossas Áreas de Atuação</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           O INRUA atua em diversas frentes para garantir direitos e dignidade à população em situação de rua
@@ -238,50 +239,26 @@ export default function SobrePage() {
       <section className="container-max section-padding">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Estrutura Organizacional</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Nossa equipe é composta por profissionais dedicados em diferentes áreas de expertise
+          Gestão democrática e transparente, eleita em assembleia para o mandato 2023-2026.
         </p>
 
         <div className="max-w-7xl mx-auto">
-          {/* Organograma Simplificado */}
-          <div className="mb-16">
-            <div className="text-center mb-6">
-              <div className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold">
-                Assembleia Geral
-              </div>
-            </div>
-
-            <div className="text-center mb-6">
-              <div className="w-0.5 h-8 bg-border mx-auto"></div>
-              <div className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold">
-                Conselho Administrativo
-              </div>
-            </div>
-
-            <div className="text-center mb-6">
-              <div className="w-0.5 h-8 bg-border mx-auto"></div>
-              <div className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold">
-                Diretoria Executiva
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="w-0.5 h-8 bg-border mx-auto"></div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-semibold">
-                  Dir. de Programas
-                </div>
-                <div className="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-semibold">
-                  Dir. Administrativo
-                </div>
-                <div className="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-semibold">
-                  Dir. Financeiro
-                </div>
-              </div>
-            </div>
+          {/* Organograma Visual Simplificado */}
+          <div className="mb-16 hidden md:block">
+             <div className="flex flex-col items-center gap-4">
+                 <div className="border-2 border-primary/20 bg-primary/5 px-6 py-2 rounded-lg font-bold text-primary">Assembleia Geral</div>
+                 <div className="h-6 w-0.5 bg-border"></div>
+                 <div className="border-2 border-primary/20 bg-primary/5 px-6 py-2 rounded-lg font-bold text-primary">Diretoria Executiva</div>
+                 <div className="h-6 w-0.5 bg-border"></div>
+                 <div className="flex gap-4">
+                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Conselho Fiscal</div>
+                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Coord. Projetos</div>
+                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Apoio Técnico</div>
+                 </div>
+             </div>
           </div>
 
           {/* Equipe Técnica */}
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Equipe Técnica</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((member, idx) => (
               <TeamCard key={idx} name={member.name} role={member.role} area={member.area} />
@@ -291,10 +268,10 @@ export default function SobrePage() {
       </section>
 
       {/* Documentos Institucionais */}
-      <section className="container-max section-padding">
+      <section className="container-max section-padding bg-muted/30">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Documentos Institucionais</h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Acesse os documentos legais e institucionais que definem nossa organização e garantem conformidade regulatória
+          Transparência Ativa: Acesse os documentos que comprovam nossa regularidade jurídica e fiscal.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
