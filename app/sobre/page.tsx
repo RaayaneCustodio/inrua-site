@@ -102,7 +102,7 @@ export default function SobrePage() {
         />
       </section>
 
-      {/* História */}
+      {/* História do InRua */}
       <section className="container-max section-padding">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Nossa História</h2>
