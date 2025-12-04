@@ -27,10 +27,9 @@ export default function AcoesPage() {
       results: "Até 2024: 320+ pessoas alojadas com 78% de permanência em moradia",
       startDate: "2018",
       endDate: "Contínuo",
-      image: "/placeholder.svg?key=k3n2l",
+      image: "/moradia-primeiro.png",
       reports: [
-        { title: "Relatório Housing First 2023-2024", url: "#" },
-        { title: "Avaliação de Impacto em Direitos Sociais", url: "#" },
+        { title: "Moradia Primeiro: Da Teoria à Prática", url: "/docs/projetos/MoradiaPrimeiro.pdf" },
       ],
     },
     {

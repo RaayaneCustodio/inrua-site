@@ -67,34 +67,35 @@ export default function Home() {
 
   const galleryItems = [
     {
-      title: "Ações de Direitos Humanos",
-      category: "Direitos",
-      image: "/a--o-comunit-ria-impacto-social.jpg",
+      
+      title: "Moradia Primeiro", 
+      category: "Habitação",
+      image: "/moradia-primeiro.png", 
     },
     {
       title: "Programa Moradia Primeiro",
       category: "Habitação",
-      image: "/programa-educacional-crian-as.jpg",
+      image: "/programa-educacional-crian-as.jpg", // Placeholder
     },
     {
       title: "Mobilização e Participação",
       category: "Advocacy",
-      image: "/trabalho-em-equipe-colabora--o.jpg",
+      image: "/trabalho-em-equipe-colabora--o.jpg", // Placeholder
     },
     {
       title: "Políticas Públicas",
       category: "Políticas",
-      image: "/sustentabilidade-ambiente.jpg",
+      image: "/sustentabilidade-ambiente.jpg", // Placeholder
     },
     {
       title: "Capacitação de Profissionais",
       category: "Treinamento",
-      image: "/capacita--o-treinamento-profissional.jpg",
+      image: "/capacita--o-treinamento-profissional.jpg", // Placeholder
     },
     {
       title: "Congressos e Eventos",
       category: "Eventos",
-      image: "/evento-mobiliza--o-social.jpg",
+      image: "/evento-mobiliza--o-social.jpg", // Placeholder
     },
   ]
 
@@ -129,29 +130,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="container-max section-padding">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Navegue por Nossas Seções</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conheça nossas ações, documentos e dados sobre defesa de direitos da população de rua.
-          </p>
-        </div>
+      {/* Features Grid - CORRIGIDO (Fundo Cinza Total) */}
+      <section className="w-full bg-muted/30 section-padding">
+        <div className="container-max px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Navegue por Nossas Seções</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Conheça nossas ações, documentos e dados sobre defesa de direitos da população de rua.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
-            <Link key={feature.href} href={feature.href}>
-              <Card className="h-full p-6 cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all group">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="font-bold text-lg text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
-                <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                  Acessar
-                  <ArrowRight size={16} />
-                </div>
-              </Card>
-            </Link>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature) => (
+              <Link key={feature.href} href={feature.href}>
+                <Card className="h-full p-6 cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all group bg-white/50 backdrop-blur-sm">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="font-bold text-lg text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
+                  <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                    Acessar
+                    <ArrowRight size={16} />
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -168,10 +171,15 @@ export default function Home() {
           {galleryItems.map((item, idx) => (
             <div key={idx} className="group cursor-pointer overflow-hidden rounded-lg">
               <div className="relative overflow-hidden h-64 bg-muted">
+                {/* Verifica se a imagem existe, senão usa placeholder */}
                 <img
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    // Fallback se a imagem não carregar
+                    (e.target as HTMLImageElement).src = "https://placehold.co/600x400?text=Sem+Imagem"
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white font-bold">{item.title}</h3>
@@ -195,39 +203,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-max section-padding">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Incentivos</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Parcerias que fortalecem nossa missão de defender os direitos da população em situação de rua.
-          </p>
-        </div>
+      {/* Patrocinadores - CORRIGIDO (Fundo Cinza Total e Centralizado) */}
+      <section className="w-full bg-muted/30 section-padding">
+        <div className="container-max px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Patrocinadores</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Parcerias que fortalecem nossa missão de defender os direitos da população em situação de rua.
+            </p>
+          </div>
 
-        <SponsorsCarousel />
+          <div className="flex justify-center w-full items-center">
+            <SponsorsCarousel />
+          </div>
 
-        <div className="flex justify-center mt-8">
-          <Link href="/incentivos">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-            >
-              Ver Todos os Incentivos
-            </Button>
-          </Link>
+          <div className="flex justify-center mt-8">
+            <Link href="/patrocinadores">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              >
+                Ver Todos os Patrocinadores
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="container-max section-padding">
         <div className="gradient-accent rounded-lg p-12 text-center text-primary-foreground">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparência e Prestação de Contas</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparência e Accountability</h2>
           <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            O INRUA mantém compromisso inabalável com a transparência pública e a prestação de contas de todas as suas
-            ações, parcerias com órgãos públicos e gestão de recursos financeiros. Conforme determinado pela Lei nº
-            13.019/2014 (MROSC), disponibilizamos acesso integral a documentos financeiros, relatórios de execução,
-            termos de colaboração e dados sobre nossa atuação. Somos responsáveis perante a população em situação de rua
-            que atendemos e perante toda a sociedade.
+            Acesse todos os dados, parcerias com poder público e documentos financeiros em nossa área de transparência.
+            Somos accountáveis com a população que atendemos e com a sociedade.
           </p>
           <Link href="/transparencia">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90">

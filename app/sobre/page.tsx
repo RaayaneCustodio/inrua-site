@@ -35,49 +35,63 @@ export default function SobrePage() {
     },
   ]
 
-  // DOCUMENTOS - Nomes Exatos (Maiúsculas/Minúsculas importam)
+  // DOCUMENTOS - Configurados para a pasta public/docs/sobre
   const documents = [
     {
       title: "Estatuto Social",
-      description: "Documento oficial que define os objetivos e governança da organização",
-      fileUrl: "/EstatutoINRua.pdf", 
-      fileName: "EstatutoINRua.pdf",
+      description: "Documento oficial que define os objetivos, governança e finalidade da organização.",
+      fileUrl: "/docs/sobre/estatuto-inrua.pdf",
+      fileName: "Estatuto Social.pdf",
       date: "Vigente",
     },
     {
       title: "Ata de Eleição da Diretoria",
-      description: "Ata da Assembleia Geral Ordinária - Mandato 2023/2026",
-      fileUrl: "/Diretoria.pdf", 
-      fileName: "Diretoria.pdf",
+      description: "Ata da Assembleia Geral Ordinária que elegeu a atual diretoria (Mandato 2023-2026).",
+      fileUrl: "/docs/sobre/ata-diretoria.pdf",
+      fileName: "Ata Diretoria 2023-2026.pdf",
       date: "Março 2023",
     },
     {
       title: "Cartão CNPJ",
-      description: "Comprovante de Inscrição e Situação Cadastral Ativa",
-      fileUrl: "/CNPJInrua.pdf",
-      fileName: "CNPJInrua.pdf",
+      description: "Comprovante de Inscrição e Situação Cadastral Ativa na Receita Federal.",
+      fileUrl: "/docs/sobre/cnpj-inrua.pdf", // Usei a versão com traço que vi na tua imagem
+      fileName: "Cartão CNPJ.pdf",
       date: "Ativo",
     },
     {
-      title: "CND - Certidão Negativa Federal",
-      description: "Comprovação de situação fiscal regular junto à Receita Federal",
-      fileUrl: "#", 
-      fileName: "aguardando-emissao.pdf",
-      date: "Em atualização",
+      title: "CND - Federal",
+      description: "Certidão Negativa de Débitos Relativos aos Tributos Federais e à Dívida Ativa da União.",
+      fileUrl: "/docs/sobre/cnd-federal.pdf",
+      fileName: "CND Federal.pdf",
+      date: "Válida",
     },
     {
-      title: "Certificado de Regularidade FGTS",
-      description: "Comprovação de regularidade junto à Caixa Econômica Federal",
-      fileUrl: "#", 
-      fileName: "aguardando-emissao.pdf",
-      date: "Em atualização",
+      title: "CND - Estadual (PR)",
+      description: "Certidão Negativa de Débitos Tributários e de Dívida Ativa Estadual do Paraná.",
+      fileUrl: "/docs/sobre/cnd-estadual.pdf",
+      fileName: "CND Estadual.pdf",
+      date: "Válida",
     },
     {
-      title: "CNDT - Débitos Trabalhistas",
-      description: "Certidão Negativa de Débitos Trabalhistas",
-      fileUrl: "#", 
-      fileName: "aguardando-emissao.pdf",
-      date: "Em atualização",
+      title: "CND - Municipal (Curitiba)",
+      description: "Certidão Negativa de Débitos de Tributos Municipais.",
+      fileUrl: "/docs/sobre/cnd-municipal.pdf",
+      fileName: "CND Municipal.pdf",
+      date: "Válida",
+    },
+    {
+      title: "CRF - Regularidade FGTS",
+      description: "Certificado de Regularidade do Fundo de Garantia do Tempo de Serviço - Caixa Econômica.",
+      fileUrl: "/docs/sobre/crf-fgts.pdf",
+      fileName: "CRF - FGTS.pdf",
+      date: "Válida",
+    },
+    {
+      title: "CNDT - Trabalhista",
+      description: "Certidão Negativa de Débitos Trabalhistas emitida pela Justiça do Trabalho.",
+      fileUrl: "/docs/sobre/cndt-trabalhista.pdf",
+      fileName: "CNDT Trabalhista.pdf",
+      date: "Válida",
     },
   ]
 
@@ -102,7 +116,7 @@ export default function SobrePage() {
         />
       </section>
 
-      {/* História do InRua */}
+      {/* História */}
       <section className="container-max section-padding">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Nossa História</h2>
