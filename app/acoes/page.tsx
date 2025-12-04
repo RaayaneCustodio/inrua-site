@@ -54,7 +54,7 @@ export default function AcoesPage() {
       image: "/placeholder.svg?key=p8x9m",
       reports: [
         { title: "Relatório de Educação em Direitos 2024", url: "#" },
-        { title: "Análise de Impacto - Acesso a Direitos", url: "#" },
+        { title: "Análise de Impacto - Acesso a Direitos Teste", url: "#" },
       ],
     },
     {
