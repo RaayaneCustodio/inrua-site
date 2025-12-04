@@ -33,10 +33,20 @@ export default function ContatoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Simular envio do formulário
+    
+    // Simulação de envio para feedback visual
+    // Para funcionar realmente sem backend, a melhor opção gratuita é usar Formspree.io
+    // Ou enviar via WhatsApp como feito abaixo
+    
     setTimeout(() => {
       setSubmitted(true)
       setLoading(false)
+      
+      // Opcional: Abrir WhatsApp com a mensagem (Descomente se quiser usar)
+      // const text = `Olá, meu nome é ${formData.name}. Assunto: ${formData.subject}. Mensagem: ${formData.message}`;
+      // const encodedText = encodeURIComponent(text);
+      // window.open(`https://wa.me/554130146708?text=${encodedText}`, '_blank');
+
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
       setTimeout(() => setSubmitted(false), 5000)
     }, 1500)
@@ -46,25 +56,24 @@ export default function ContatoPage() {
     {
       icon: MapPin,
       title: "Endereço",
-      content: "Rua [Endereço INRUA]\nSão Paulo, SP\nBrasil",
+      content: "Rua Voluntários da Pátria, 233, Conj 52\nCentro, Curitiba - PR\nCEP: 80.020-000",
     },
     {
       icon: Phone,
-      title: "Telefone e WhatsApp",
-      content: "Telefone: [XX] XXXX-XXXX\nWhatsApp: [XX] XXXXX-XXXX",
+      title: "Telefone",
+      content: "Telefone: (41) 3014-6708\n(Atendimento em horário comercial)",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "contato@inrua.org.br\ntransparencia@inrua.org.br\nparcerias@inrua.org.br",
+      content: "inruabrasil@gmail.com\ncontato@inrua.org.br",
     },
   ]
 
   const socialLinks = [
     { icon: Facebook, label: "Facebook", href: "#" },
     { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Instagram, label: "Instagram", href: "#" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/inruabrasil/" }, // Exemplo
   ]
 
   return (
@@ -109,7 +118,7 @@ export default function ContatoPage() {
                 <span className="font-semibold text-foreground">Segunda a Sexta:</span> 9h às 18h
               </p>
               <p className="text-muted-foreground">
-                <span className="font-semibold text-foreground">Fim de semana:</span> Contato via WhatsApp
+                <span className="font-semibold text-foreground">Fim de semana:</span> Fechado (exceto ações programadas)
               </p>
             </div>
             <div className="text-sm text-muted-foreground">
@@ -117,7 +126,7 @@ export default function ContatoPage() {
                 <strong>Resposta em até 48 horas</strong> (dias úteis) para emails de contato.
               </p>
               <p>
-                Para questões urgentes, utilize nosso <strong>WhatsApp</strong>
+                Para questões urgentes ou denúncias, recomendamos contactar os órgãos públicos competentes (156 em Curitiba).
               </p>
             </div>
           </div>
@@ -127,9 +136,9 @@ export default function ContatoPage() {
       {/* Formulário de Contato */}
       <section className="container-max section-padding">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Formulário de Contato</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Fale Conosco</h2>
           <p className="text-muted-foreground text-center mb-8">
-            Preencha o formulário abaixo e entraremos em contato com você em breve.
+            Preencha o formulário abaixo para dúvidas, sugestões ou interesse em voluntariado.
           </p>
 
           {submitted && (
@@ -205,7 +214,7 @@ export default function ContatoPage() {
                     <option value="">Selecione um assunto</option>
                     <option value="programas">Informações sobre programas</option>
                     <option value="parcerias">Interesse em parcerias</option>
-                    <option value="pesquisa">Colaboração em pesquisa</option>
+                    <option value="voluntariado">Voluntariado</option>
                     <option value="doacao">Doação</option>
                     <option value="transparencia">Informações de transparência</option>
                     <option value="outro">Outro</option>
@@ -233,13 +242,6 @@ export default function ContatoPage() {
                 <p className="mb-2">
                   <strong>Proteção de dados:</strong> Seus dados são protegidos conforme a Lei Geral de Proteção de
                   Dados (LGPD). Não compartilharemos suas informações com terceiros sem consentimento.
-                </p>
-                <p>
-                  Ao enviar este formulário, você concorda com nossa{" "}
-                  <a href="/politica-privacidade" className="text-primary hover:underline">
-                    política de privacidade
-                  </a>
-                  .
                 </p>
               </div>
 
@@ -281,56 +283,13 @@ export default function ContatoPage() {
                 href={social.href}
                 className="p-4 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all"
                 title={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Icon className="text-muted-foreground hover:text-primary transition-colors" size={28} />
               </a>
             )
           })}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="container-max section-padding">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Perguntas Frequentes</h2>
-
-        <div className="max-w-2xl mx-auto space-y-4">
-          {[
-            {
-              q: "Qual é a missão do INRUA?",
-              a: "O INRUA dedica-se ao apoio à população em situação de rua através de políticas públicas, pesquisa, capacitação e programas inovadores como o Housing First. Operamos em defesa dos direitos humanos desde 2016.",
-            },
-            {
-              q: "O INRUA atua em todo o Brasil?",
-              a: "Sim, trabalhamos com presença nacional em mais de 15 estados, com foco especial em capitais. Realizamos assessorias, pesquisas e execução de programas em parceria com governos municipais, estaduais e federal.",
-            },
-            {
-              q: "Como acesso os documentos de transparência?",
-              a: 'Todos os documentos obrigatórios conforme Lei 13.019/2014 (MROSC) estão disponíveis em nossa seção "Transparência". Parcerias públicas, relatórios financeiros e documentos institucionais podem ser consultados livremente.',
-            },
-            {
-              q: "Como posso fazer uma doação?",
-              a: 'Entre em contato através do formulário acima com o assunto "Doação" ou nos contate pelos canais de comunicação disponibilizados. Forneceremos informações sobre formas de contribuição e benefícios fiscais.',
-            },
-            {
-              q: "Vocês buscam parcerias?",
-              a: 'Sim! Estamos abertos a parcerias com governos, universidades, institutos de pesquisa e organizações que compartilhem nossa missão. Entre em contato com assunto "Parcerias" ou "Colaboração em pesquisa".',
-            },
-            {
-              q: "Qual é o CNPJ do INRUA?",
-              a: "Você pode verificar nossos dados cadastrais no Registro de Pessoa Jurídica disponível em nossa seção de documentos institucionais (Transparência).",
-            },
-          ].map((faq, idx) => (
-            <details
-              key={idx}
-              className="group cursor-pointer border border-border rounded-lg p-4 hover:border-primary/50 transition-colors"
-            >
-              <summary className="font-semibold text-foreground flex items-center justify-between">
-                <span>{faq.q}</span>
-                <span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <p className="mt-4 text-muted-foreground text-sm">{faq.a}</p>
-            </details>
-          ))}
         </div>
       </section>
 

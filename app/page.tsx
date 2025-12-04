@@ -70,32 +70,32 @@ export default function Home() {
       
       title: "Moradia Primeiro", 
       category: "Habitação",
-      image: "/moradia-primeiro.png", 
+      image: "/moradia-primeiro1.png", 
     },
     {
-      title: "Programa Moradia Primeiro",
+      title: "Movimento de Rua",
       category: "Habitação",
-      image: "/programa-educacional-crian-as.jpg", // Placeholder
+      image: "/movimento2.png", 
     },
     {
-      title: "Mobilização e Participação",
-      category: "Advocacy",
-      image: "/trabalho-em-equipe-colabora--o.jpg", // Placeholder
+      title: "Moradia Primeiro",
+      category: "Habitação",
+      image: "/moradia-primeiro2.png", 
     },
     {
-      title: "Políticas Públicas",
-      category: "Políticas",
-      image: "/sustentabilidade-ambiente.jpg", // Placeholder
+      title: "Movimento de Rua",
+      category: "Habitação",
+      image: "/movimento.jpg", 
     },
     {
-      title: "Capacitação de Profissionais",
-      category: "Treinamento",
-      image: "/capacita--o-treinamento-profissional.jpg", // Placeholder
+      title: "Cozinha Solidária",
+      category: "Alimentação",
+      image: "/cozinha-solidaria.png", 
     },
     {
-      title: "Congressos e Eventos",
-      category: "Eventos",
-      image: "/evento-mobiliza--o-social.jpg", // Placeholder
+      title: "Cozinha Solidária",
+      category: "Alimentação",
+      image: "/cozinha-solidaria2.png", 
     },
   ]
 
