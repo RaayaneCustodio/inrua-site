@@ -85,7 +85,7 @@ export default function Home() {
     {
       title: "Movimento de Rua",
       category: "Habitação",
-      image: "/movimento.jpg", 
+      image: "/movimento.png", 
     },
     {
       title: "Cozinha Solidária",
