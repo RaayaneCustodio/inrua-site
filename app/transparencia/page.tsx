@@ -44,11 +44,9 @@ export default function TransparenciaPage() {
           title: "Plano de Trabalho Detalhado", 
           url: "/docs/transparencia/Plano-de-Trabalho-Cidadania.pdf" // Seu arquivo renomeado
         },
-        // Adicione aqui o Termo quando assinar
-        { title: "Termo de Colaboração (Aguardando Assinatura)", url: "#" },
       ],
     },
-    // Você pode adicionar outras parcerias antigas aqui se tiver os dados completos
+
   ]
 
   // 2. RELATÓRIOS DE ATIVIDADES (DADOS REAIS DOS SEUS PDFs)

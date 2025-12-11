@@ -80,15 +80,11 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="text-primary mt-0.5" />
-                <p className="text-muted-foreground">Brasília, DF - Brasil</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={16} className="text-primary" />
-                <p className="text-muted-foreground">+55 (61) 3333-4444</p>
+                <p className="text-muted-foreground">Curitiba, Brasil</p>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={16} className="text-primary" />
-                <p className="text-muted-foreground">contato@inrua.org.br</p>
+                <p className="text-muted-foreground">inruabrasiL@gmail.com</p>
               </div>
             </div>
 

@@ -178,6 +178,7 @@ export default function Home() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   onError={(e) => {
                     // Fallback se a imagem não carregar
+                    //Grande Teste
                     (e.target as HTMLImageElement).src = "https://placehold.co/600x400?text=Sem+Imagem"
                   }}
                 />
