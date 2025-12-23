@@ -32,12 +32,12 @@ export default function AcoesPage() {
         { title: "Moradia Primeiro: Da Teoria à Prática", url: "/docs/projetos/MoradiaPrimeiro.pdf" },
       ],
     },
-{
+    {
       id: 2,
       name: "Dia Nacional de Luta e Luto",
       category: "Mobilização e Direitos",
       status: "Realizado",
-      image: "/Luta-Luto.png", 
+      image: "/Luta-Luto.png",
       description:
         "Evento alusivo ao Dia Nacional de Luta da População em Situação de Rua, em memória à resistência e organização coletiva desde o 'Massacre da Sé' (2004). Três dias de serviços públicos, eventos culturais e acolhimento na Praça General Osório.",
       publicTarget: "População em situação de rua de Curitiba",
@@ -61,7 +61,7 @@ export default function AcoesPage() {
       name: "Cozinha Solidária MNPR e INRua",
       category: "Segurança Alimentar",
       status: "Em Execução",
-      image: "/cozinha-solidaria.png", 
+      image: "/cozinha-solidaria.png",
       description:
         "Parceria estratégica entre o Movimento Nacional da População de Rua (MNPR) e o INRua para combater a fome em Curitiba. Prepara e distribui refeições nutritivas diariamente, garantindo segurança alimentar para a população vulnerável.",
       publicTarget: "Pessoas em situação de rua e vulnerabilidade social",
@@ -96,11 +96,11 @@ export default function AcoesPage() {
       <section className="container-max section-padding">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {projects.length} Programas Estratégicos
+            {projects.length} Ações do Inrua
           </h2>
           <p className="text-lg text-muted-foreground">
-            Cada programa foi desenvolvido com base no Decreto nº 7.503/2009 e na Política Nacional para População em
-            Situação de Rua. Confira detalhes de execução, resultados e documentação.
+            Cada programa foi desenvolvido para garantir o direito humano à alimentação adequada,
+            promovendo dignidade, inclusão social e segurança alimentar para todos.
           </p>
         </div>
       </section>
