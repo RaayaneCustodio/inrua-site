@@ -78,6 +78,30 @@ export default function AcoesPage() {
       endDate: "Em atividade",
       reports: [],
     },
+    {
+      id: 4,
+      name: "Conferência Livre de Mulheres em Situação de Rua",
+      category: "Direitos e Participação Social",
+      status: "Realizado",
+      image: "/mulheres.jpeg",
+      description:
+        "Encontro histórico realizado em Curitiba para dar voz e protagonismo às mulheres em situação de rua. O evento debateu moradia, saúde, segurança e trabalho, visando a construção de políticas públicas interseccionais.",
+      publicTarget: "Mulheres em situação de rua, ativistas e pesquisadoras",
+      objectives:
+        "Documentar demandas urgentes, combater a invisibilidade e a violência contra a mulher em situação de rua e eleger delegadas para a etapa nacional da 5ª Conferência de Políticas para Mulheres.",
+      activities: [
+        "Grupos temáticos de discussão (Saúde, Trabalho, Moradia e Segurança)",
+        "Relatos de trajetórias de vida e superação",
+        "Formulação de propostas para protocolos de segurança e moradia popular",
+        "Eleição de delegadas titulares e suplentes",
+      ],
+      results: "Elaboração de relatoria técnica enviada ao Governo Federal e fortalecimento da rede de proteção às mulheres em Curitiba.",
+      startDate: "Agosto 2025",
+      endDate: "Concluído",
+      reports: [
+        { title: "Relatoria Final da Conferência", url: "/docs/transparencia/RelatorioMulheres.pdf" },
+      ],
+    },
   ]
 
   return (
@@ -85,7 +109,7 @@ export default function AcoesPage() {
       <Header />
 
       {/* Hero Banner */}
-      <section className="container-max pt-12">
+      <section className="container-max pt-12 px-4">
         <HeroBanner
           title="Programas e Ações do INRUA"
           description="Confira todos os programas que desenvolvemos para garantir direitos e dignidade da população em situação de rua"
@@ -93,31 +117,31 @@ export default function AcoesPage() {
       </section>
 
       {/* Introdução */}
-      <section className="container-max section-padding">
+      <section className="container-max section-padding px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {projects.length} Ações do Inrua
+            {projects.length} Ações de Impacto
           </h2>
           <p className="text-lg text-muted-foreground">
-            Cada programa foi desenvolvido para garantir o direito humano à alimentação adequada,
-            promovendo dignidade, inclusão social e segurança alimentar para todos.
+            Atuamos em diversas frentes para garantir direitos fundamentais, 
+            promovendo autonomia, segurança alimentar e incidência política.
           </p>
         </div>
       </section>
 
       {/* Grid de Projetos */}
-      <section className="container-max section-padding">
+      <section className="container-max section-padding px-4">
         <div className="space-y-8">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow border-border">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
                 {/* Imagem */}
                 <div className="md:col-span-1">
-                  <div className="h-64 md:h-full min-h-48 bg-muted rounded-lg overflow-hidden">
+                  <div className="h-64 md:h-full min-h-[200px] bg-muted rounded-lg overflow-hidden">
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
@@ -127,7 +151,7 @@ export default function AcoesPage() {
                   <div>
                     <div className="flex flex-wrap gap-2 mb-3">
                       <Badge className="bg-primary text-primary-foreground">{project.category}</Badge>
-                      <Badge variant="outline" className="border-green-500 text-green-700 bg-green-50">
+                      <Badge variant="outline" className={project.status === "Em Execução" ? "border-green-500 text-green-700 bg-green-50" : "border-blue-500 text-blue-700 bg-blue-50"}>
                         {project.status}
                       </Badge>
                     </div>
@@ -136,19 +160,12 @@ export default function AcoesPage() {
                     <p className="text-muted-foreground mb-4">{project.description}</p>
 
                     {/* Informações principais */}
-                    <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-sm">
                       <div className="flex items-start gap-2">
                         <Users size={16} className="text-primary mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="font-semibold text-foreground">Público</p>
+                          <p className="font-semibold text-foreground">Público-Alvo</p>
                           <p className="text-muted-foreground">{project.publicTarget}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <TrendingUp size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-foreground">Status</p>
-                          <p className="text-muted-foreground">{project.status}</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
@@ -163,16 +180,24 @@ export default function AcoesPage() {
                       <div className="flex items-start gap-2">
                         <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="font-semibold text-foreground">Escala</p>
-                          <p className="text-muted-foreground">Toda Brasil</p>
+                          <p className="font-semibold text-foreground">Abrangência</p>
+                          <p className="text-muted-foreground">Brasil / Paraná</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <TrendingUp size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-foreground">Status Atual</p>
+                          <p className="text-muted-foreground">{project.status}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Objetivos e Atividades (expandible) */}
-                    <details className="cursor-pointer group mb-4">
-                      <summary className="font-semibold text-foreground hover:text-primary transition-colors">
-                        Detalhes do Programa
+                    <details className="cursor-pointer group mb-4 border border-border rounded-md p-3">
+                      <summary className="font-semibold text-foreground hover:text-primary transition-colors list-none flex justify-between items-center">
+                        Ver detalhes e objetivos
+                        <span className="text-xs text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
                       </summary>
                       <div className="mt-4 space-y-4 pt-4 border-t border-border">
                         <div>
@@ -195,19 +220,21 @@ export default function AcoesPage() {
                     </details>
 
                     {/* Relatórios */}
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <h5 className="font-semibold text-foreground mb-3">Relatórios e Documentação</h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {project.reports.map((report, idx) => (
-                          <DocumentCard
-                            key={idx}
-                            title={report.title}
-                            fileUrl={report.url}
-                            fileName={`${project.name.toLowerCase().replace(/\s+/g, "-")}-${idx}.pdf`}
-                          />
-                        ))}
+                    {project.reports.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-border">
+                        <h5 className="font-semibold text-foreground mb-3">Relatórios e Documentação</h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {project.reports.map((report, idx) => (
+                            <DocumentCard
+                              key={idx}
+                              title={report.title}
+                              fileUrl={report.url}
+                              fileName={`${project.name.toLowerCase().replace(/\s+/g, "-")}-${idx}.pdf`}
+                            />
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -217,12 +244,11 @@ export default function AcoesPage() {
       </section>
 
       {/* CTA final */}
-      <section className="container-max section-padding">
-        <div className="gradient-accent rounded-lg p-12 text-center text-primary-foreground">
-          <h2 className="text-3xl font-bold mb-4">Conheça Nosso Trabalho</h2>
-          <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Acesse nossa seção de transparência para dados completos, parcerias públicas, financiamento e documentação
-            de todos os programas.
+      <section className="container-max section-padding px-4">
+        <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white">
+          <h2 className="text-3xl font-bold mb-4">Conheça Nosso Trabalho de Perto</h2>
+          <p className="text-lg mb-8 text-slate-300 max-w-2xl mx-auto">
+            Acesse nossa seção de transparência para dados financeiros, parcerias públicas detalhadas e os relatórios anuais de gestão.
           </p>
         </div>
       </section>
