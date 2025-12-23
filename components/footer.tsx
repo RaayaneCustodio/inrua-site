@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react"
+import { Mail, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -54,10 +54,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/politica-privacidade"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
+                <Link href="/politica-privacidade" className="text-muted-foreground hover:text-primary transition-colors">
                   Política de Privacidade
                 </Link>
               </li>
@@ -77,31 +74,45 @@ export function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="font-bold text-foreground">Contato INRUA</h3>
+
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="text-primary mt-0.5" />
                 <p className="text-muted-foreground">Curitiba, Brasil</p>
               </div>
+
               <div className="flex items-center gap-2">
                 <Mail size={16} className="text-primary" />
-                <p className="text-muted-foreground">inruabrasiL@gmail.com</p>
+                <a
+                  href="mailto:inruabrasil@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  inruabrasil@gmail.com
+                </a>
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links - EXTERNOS */}
             <div className="flex gap-3 pt-2">
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://www.facebook.com/inruabr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook size={18} />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={18} />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={18} />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              </a>
+
+              <a
+                href="https://www.instagram.com/inruabrasil/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
                 <Instagram size={18} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

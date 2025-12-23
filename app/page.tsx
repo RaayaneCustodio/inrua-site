@@ -208,9 +208,9 @@ export default function Home() {
       <section className="w-full bg-muted/30 section-padding">
         <div className="container-max px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Patrocinadores</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Incentivadores</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Parcerias que fortalecem nossa missão de defender os direitos da população em situação de rua.
+              Incentivos que fortalecem nossa missão de defender os direitos da população em situação de rua.
             </p>
           </div>
 
@@ -225,7 +225,7 @@ export default function Home() {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
               >
-                Ver Todos os Patrocinadores
+                Ver Todos os Incentivadores
               </Button>
             </Link>
           </div>
@@ -235,10 +235,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="container-max section-padding">
         <div className="gradient-accent rounded-lg p-12 text-center text-primary-foreground">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparência e Accountability</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparência</h2>
           <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Acesse todos os dados, parcerias com poder público e documentos financeiros em nossa área de transparência.
-            Somos accountáveis com a população que atendemos e com a sociedade.
+            Acesse todos os dados,incentivos e documentos financeiros em nossa área de transparência.
           </p>
           <Link href="/transparencia">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90">
