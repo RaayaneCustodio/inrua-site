@@ -102,6 +102,28 @@ export default function AcoesPage() {
         { title: "Relatoria Final da Conferência", url: "/docs/transparencia/RelatorioMulheres.pdf" },
       ],
     },
+    {
+      id: 4,
+      name: "Ato Pela Pop Rua: Contra Internação Involuntária",
+      category: "Direitos Humanos",
+      status: "Mobilização",
+      image: "/atoPopRua.jpeg",
+      description:
+        "Mobilização em frente à Prefeitura de Curitiba contra ações higienistas de internação forçada. Defendemos que cuidado sem laudo médico e sem devido processo legal é arbítrio, não saúde. Internar sem garantir moradia é condenar ao ciclo de sofrimento.",
+      publicTarget: "Poder público e sociedade civil",
+      objectives:
+        "Denunciar violações de direitos humanos disfarçadas de 'cuidado' e exigir políticas públicas estruturantes de moradia, renda e saúde humanizada, evitando a judicialização da vida.",
+      activities: [
+        "Ato público em frente à Prefeitura de Curitiba",
+        "Advocacy contra a internação compulsória sem critério médico",
+        "Mobilização social: 'Nenhum passo atrás na luta por direitos'",
+        "Defesa de soluções reais: Moradia Primeiro e atendimento psicossocial",
+      ],
+      results: "Visibilidade para a pauta da luta antimanicomial e defesa intransigente dos direitos civis da população de rua.",
+      startDate: "Ação Pontual",
+      endDate: "Realizado",
+      reports: [],
+    },
   ]
 
   return (
@@ -123,7 +145,7 @@ export default function AcoesPage() {
             {projects.length} Ações de Impacto
           </h2>
           <p className="text-lg text-muted-foreground">
-            Atuamos em diversas frentes para garantir direitos fundamentais, 
+            Atuamos em diversas frentes para garantir direitos fundamentais,
             promovendo autonomia, segurança alimentar e incidência política.
           </p>
         </div>
