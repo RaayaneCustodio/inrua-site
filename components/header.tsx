@@ -11,6 +11,7 @@ export function Header() {
   const menuItems = [
     { label: "Home", href: "/" },
     { label: "Sobre nós", href: "/sobre" },
+    { label: "Edital de Seleção", href: "/edital" },
     { label: "Projetos", href: "/acoes" },
     { label: "Incentivos", href: "/incentivos" },
     { label: "Transparência", href: "/transparencia" },
