@@ -7,8 +7,8 @@ import { DocumentCard } from "@/components/document-card"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Alert, AlertDescription } from "@/components/ui/alert" // Import necessário
-import { FileText, Info } from "lucide-react" // Import necessário
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { FileText, Info, MousePointerClick } from "lucide-react"
 
 export default function EditalPage() {
   const editais = [
@@ -93,7 +93,6 @@ export default function EditalPage() {
         />
       </section>
 
-      {/* BLOCO NOVO BASEADO NA IMAGEM DE TRANSPARÊNCIA */}
       <section className="container-max pt-8 px-4">
         <div className="max-w-3xl mx-auto text-center mb-6">
           <h2 className="text-2xl font-bold text-foreground mb-4">
@@ -104,33 +103,70 @@ export default function EditalPage() {
           </p>
         </div>
 
-        <Alert className="border-amber-200 bg-amber-50 text-amber-900 max-w-4xl mx-auto">
+        <Alert className="border-amber-200 bg-amber-50 text-amber-900 max-w-4xl mx-auto mb-10">
           <Info className="h-4 w-4" />
           <AlertDescription className="ml-2">
             <strong>Processo Seletivo Ativo:</strong> Os editais abaixo visam a contratação de profissionais para fortalecer a defesa dos direitos da população de rua, reafirmando nosso compromisso com a clareza e transparência em todas as etapas de seleção.
           </AlertDescription>
         </Alert>
-      </section>
 
-      <section className="container-max section-padding px-4 flex-grow">
         <Tabs defaultValue="ampliacao-coordenacao" className="w-full">
-          <div className="w-full overflow-x-auto pb-2 mb-8">
-            <TabsList className="flex w-full min-w-[600px] md:grid md:grid-cols-4">
-              {editais.map((edital) => (
-                <TabsTrigger key={edital.id} value={edital.id} className="flex-1 text-xs">
-                  {edital.titulo}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          {/* MENU DE SELEÇÃO DINÂMICO E VISUAL */}
+          <div className="w-full space-y-3 mb-8">
+            <div className="flex items-center gap-2 text-muted-foreground md:justify-center">
+              <MousePointerClick size={14} className="animate-pulse" />
+              <p className="text-[10px] uppercase tracking-widest font-bold">
+                Selecione um edital para ver os detalhes
+              </p>
+            </div>
+            
+            <div className="relative group">
+              {/* Container com scroll lateral suave */}
+              <div className="w-full overflow-x-auto pb-4 scrollbar-hide">
+                <TabsList className="flex inline-flex min-w-full md:grid md:grid-cols-4 h-auto bg-transparent gap-3 p-1">
+                  {editais.map((edital) => (
+                    <TabsTrigger 
+                      key={edital.id} 
+                      value={edital.id} 
+                      className="
+                        flex-shrink-0 
+                        w-[240px] md:w-full 
+                        min-h-[80px] 
+                        whitespace-normal 
+                        text-center 
+                        text-xs 
+                        font-bold 
+                        border-2 
+                        border-muted 
+                        data-[state=active]:border-primary 
+                        data-[state=active]:bg-primary/5 
+                        data-[state=active]:text-primary 
+                        data-[state=active]:shadow-md
+                        hover:bg-muted/50 
+                        transition-all 
+                        rounded-xl 
+                        p-3
+                        shadow-sm
+                      "
+                    >
+                      {edital.titulo}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+              
+              {/* Degradê indicativo de scroll no mobile */}
+              <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none md:hidden" />
+            </div>
           </div>
 
           {editais.map((edital) => (
-            <TabsContent key={edital.id} value={edital.id} className="space-y-8">
+            <TabsContent key={edital.id} value={edital.id} className="space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 
                 <div className="lg:col-span-2 space-y-6">
-                  <Card>
-                    <CardHeader className="bg-primary/5">
+                  <Card className="overflow-hidden">
+                    <CardHeader className="bg-primary/5 border-b">
                       <CardTitle className="text-xl text-primary">{edital.titulo}</CardTitle>
                       <CardDescription>{edital.subtitulo}</CardDescription>
                     </CardHeader>
@@ -174,17 +210,17 @@ export default function EditalPage() {
 
                   <Card className="p-6">
                     <h3 className="font-bold mb-4 text-sm uppercase tracking-wider text-muted-foreground">Inscrição</h3>
-                    <div className="space-y-3 text-sm">
-                      <div>
-                        <p className="font-semibold">Prazo Final:</p>
-                        <p className="text-red-600 font-bold">{edital.cronograma.inscricao}</p>
+                    <div className="space-y-4 text-sm">
+                      <div className="p-3 bg-red-50 rounded-md border border-red-100">
+                        <p className="text-xs text-red-800 font-semibold uppercase">Prazo Final</p>
+                        <p className="text-red-600 font-bold text-lg">{edital.cronograma.inscricao}</p>
                       </div>
                       <div>
-                        <p className="font-semibold">Enviar para:</p>
-                        <p className="text-primary break-all">{edital.inscricao.email}</p>
+                        <p className="font-semibold text-muted-foreground">Enviar para:</p>
+                        <p className="text-primary font-medium break-all">{edital.inscricao.email}</p>
                       </div>
                       <div className="pt-4 border-t">
-                        <p className="font-semibold">Resultado:</p>
+                        <p className="font-semibold text-muted-foreground">Resultado Previsto:</p>
                         <p className="font-bold text-green-600">{edital.cronograma.resultado}</p>
                       </div>
                     </div>
