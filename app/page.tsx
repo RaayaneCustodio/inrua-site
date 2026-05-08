@@ -230,35 +230,91 @@ export default function Home() {
       </section>
 
       {/* TRANSPARÊNCIA */}
-      <section className="py-28 bg-gradient-to-r from-[#5E5BA6] via-[#4D88C5] to-[#78B84D] relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-gradient-to-r from-[#5E5BA6] via-[#4D88C5] to-[#78B84D] relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="bg-[#111827]/50 backdrop-blur-2xl rounded-[32px] p-12 border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-            <div className="grid lg:grid-cols-2 gap-14 items-center">
-              <div>
-                <span className="bg-[#F2D04B] text-black px-4 py-2 rounded-full font-black text-sm">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div
+            className="
+        bg-[#111827]/50
+        backdrop-blur-2xl
+        rounded-[28px] md:rounded-[32px]
+        p-6 sm:p-8 md:p-12
+        border border-white/10
+        shadow-[0_20px_80px_rgba(0,0,0,0.35)]
+      "
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-center">
+
+              {/* TEXTO */}
+              <div className="text-center lg:text-left">
+                <span
+                  className="
+              inline-block
+              bg-[#F2D04B]
+              text-black
+              px-4 py-2
+              rounded-full
+              font-black
+              text-xs sm:text-sm
+            "
+                >
                   LEI 13.019/2014 • MROSC
                 </span>
 
-                <h2 className="text-5xl font-black text-white mt-6 mb-6">
+                <h2
+                  className="
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              font-black
+              text-white
+              mt-6
+              mb-6
+              leading-tight
+            "
+                >
                   Transparência Institucional
                 </h2>
 
-                <p className="text-white/80 text-lg leading-relaxed">
+                <p
+                  className="
+              text-white/80
+              text-base sm:text-lg
+              leading-relaxed
+              max-w-2xl
+              mx-auto lg:mx-0
+            "
+                >
                   Disponibilizamos publicamente relatórios financeiros,
-                  documentos institucionais, editais e informações de
-                  prestação de contas conforme as exigências do MROSC.
+                  documentos institucionais, informações de prestação
+                  de contas e conteúdos relacionados à transparência
+                  institucional conforme as exigências do MROSC.
                 </p>
 
                 <Link href="/transparencia">
-                  <Button className="mt-8 bg-[#F2D04B] hover:bg-[#E98C37] text-black font-black px-8 py-6 rounded-2xl text-lg shadow-[0_20px_60px_rgba(242,208,75,0.35)]">
+                  <Button
+                    className="
+                mt-8
+                w-full sm:w-auto
+                bg-[#F2D04B]
+                hover:bg-[#E98C37]
+                text-black
+                font-black
+                px-6 sm:px-8
+                py-5 sm:py-6
+                rounded-2xl
+                text-base sm:text-lg
+                shadow-[0_20px_60px_rgba(242,208,75,0.35)]
+              "
+                  >
                     Acessar Portal de Transparência
                   </Button>
                 </Link>
               </div>
 
-              <div className="grid grid-cols-2 gap-5">
+              {/* CARDS */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 {[
                   "Prestação de Contas",
                   "Relatórios",
@@ -267,12 +323,30 @@ export default function Home() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-7 text-white font-bold text-center shadow-xl hover:bg-white/20 transition-all"
+                    className="
+                    bg-white/10
+                    backdrop-blur-xl
+                    border border-white/20
+                    rounded-2xl
+                    p-5 sm:p-7
+                    text-white
+                    font-bold
+                    text-center
+                    text-sm sm:text-base
+                    shadow-xl
+                    hover:bg-white/20
+                    transition-all
+                    min-h-[100px]
+                    flex
+                    items-center
+                    justify-center
+                  "
                   >
                     {item}
                   </div>
                 ))}
               </div>
+
             </div>
           </div>
         </div>
