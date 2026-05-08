@@ -3,13 +3,24 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { HeroBanner } from "@/components/hero-banner"
-import { DocumentCard } from "@/components/document-card"
-import { Card } from "@/components/ui/card"
+
+import {
+  FileText,
+  Info,
+  AlertCircle,
+  TrendingUp,
+  ShieldCheck,
+  Landmark,
+  PieChart as PieChartIcon,
+  MousePointerClick,
+} from "lucide-react"
+
 import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { AlertCircle, FileText, Info } from "lucide-react"
+import { DocumentCard } from "@/components/document-card"
+
 import {
   BarChart,
   Bar,
@@ -27,25 +38,32 @@ import {
 export default function TransparenciaPage() {
   const [selectedPartnership, setSelectedPartnership] = useState(0)
 
-  // 1. PARCERIAS PÚBLICAS E PROPOSTAS
   const partnerships = [
     {
       id: 1,
       grantingAgency: "Prefeitura Municipal de Curitiba - SMATI",
       agreementNumber: "Edital 01/2025 (Em Processo)",
-      subject: "Projeto Cidadania PopRua - PAR e CAIS",
+
+      // AJUSTADO
+      subject: "Projeto Cidadania PopRua – Direitos e Inclusão Social",
+
       totalValue: "R$ 1.350.000,00",
       startDate: "A definir",
       endDate: "A definir",
-      status: "Em Seleção", 
-      description: "Proposta submetida ao Chamamento Público para execução de equipamento de higiene, alimentação e suporte técnico. Em fase de habilitação técnica.",
+      status: "Em Seleção",
+
+      // AJUSTADO
+      description:
+        "Proposta submetida ao Chamamento Público para fortalecimento de ações de cidadania, atendimento social, acolhimento e garantia de direitos da população em situação de rua.",
+
       documents: [
-        { 
-          title: "Plano de Trabalho Submetido", 
-          url: "/docs/transparencia/Plano-de-Trabalho-Cidadania.pdf" 
+        {
+          title: "Plano de Trabalho Submetido",
+          url: "/docs/transparencia/Plano-de-Trabalho-Cidadania.pdf",
         },
       ],
     },
+
     {
       id: 2,
       grantingAgency: "Fundação Banco do Brasil",
@@ -55,181 +73,568 @@ export default function TransparenciaPage() {
       startDate: "Jun/2025",
       endDate: "Jun/2027",
       status: "Em Execução",
-      description: "Melhoria na estrutura de Cozinhas Solidárias para beneficiamento da produção de alimentos para população em vulnerabilidade social.",
+      description:
+        "Melhoria na estrutura das Cozinhas Solidárias para beneficiamento da produção de alimentos destinados à população em vulnerabilidade social.",
       documents: [
-        { 
-          title: "Termo de Convênio e Plano de Trabalho", 
-          url: "/docs/transparencia/ConvenioBdB.pdf" 
+        {
+          title: "Termo de Convênio e Plano de Trabalho",
+          url: "/docs/transparencia/ConvenioBdB.pdf",
         },
       ],
     },
   ]
 
-  // 2. RELATÓRIOS DE ATIVIDADES (INCLUINDO O DAS MULHERES)
   const activityReports = [
     {
       title: "Relatoria Conferência de Mulheres 2025",
       date: "Ago/2025",
-      description: "Documentação e propostas da Conferência Livre de Mulheres em Situação de Rua e suas Diversidades - Paraná.",
-      url: "/docs/transparencia/RelatorioMulheres.pdf"
+      description:
+        "Documentação e propostas da Conferência Livre de Mulheres em Situação de Rua e suas Diversidades.",
+      url: "/docs/transparencia/RelatorioMulheres.pdf",
     },
+
     {
       title: "Relatório de Atividades 2021-2022",
       date: "Biênio 2021/22",
-      description: "Ações do Observatório ODH Pop Rua, Natal Solidário e articulações políticas.",
-      url: "/docs/transparencia/INRua-relatorio-2021-2022.pdf"
+      description:
+        "Ações do Observatório ODH Pop Rua, Natal Solidário e articulações políticas.",
+      url: "/docs/transparencia/INRua-relatorio-2021-2022.pdf",
     },
+
     {
       title: "Relatório de Atividades 2019-2020",
       date: "Biênio 2019/20",
-      description: "Implementação do Housing First, Seminário Nacional e ações na pandemia.",
-      url: "/docs/transparencia/INRua-relatorio-2019-2020.pdf"
+      description:
+        "Implementação do Housing First, Seminário Nacional e ações durante a pandemia.",
+      url: "/docs/transparencia/INRua-relatorio-2019-2020.pdf",
     },
   ]
 
   const expenseData = [
-    { category: "RH e Pessoal", value: 850000, fill: "#003d82" },
-    { category: "Estrutura/Aluguel", value: 150000, fill: "#FF8C42" },
-    { category: "Atividades/Insumos", value: 350000, fill: "#00C49F" },
+    { category: "RH e Pessoal", value: 850000, fill: "#5E5BA6" },
+    { category: "Estrutura", value: 150000, fill: "#E98C37" },
+    { category: "Atividades", value: 350000, fill: "#78B84D" },
   ]
 
   const revenueData = [
-    { name: "Recursos Propostos/Convênios", value: 90, color: "#003d82" },
-    { name: "Doações", value: 10, color: "#FF8C42" },
+    { name: "Convênios", value: 90, color: "#4D88C5" },
+    { name: "Doações", value: 10, color: "#F2D04B" },
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
+      {/* FUNDO */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
+
+        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
+
+        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
+      </div>
+
       <Header />
 
-      <section className="container-max pt-12 px-4">
-        <HeroBanner
-          title="Transparência Pública - Lei 13.019/2014"
-          description="Acesso completo a informações sobre parcerias, relatórios de atividades e prestação de contas da organização."
-        />
+      {/* HERO */}
+      <section className="relative min-h-[65vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/movimento2.png"
+            alt="Transparência INRUA"
+            className="w-full h-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-[#020617]/85" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/60 via-[#4D88C5]/40 to-[#78B84D]/40" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 py-28">
+          <div className="max-w-5xl">
+            <span className="bg-[#F2D04B] text-black px-5 py-2 rounded-full font-black text-sm">
+              TRANSPARÊNCIA • LEI 13.019/2014 • PRESTAÇÃO DE CONTAS
+            </span>
+
+            <h1 className="text-5xl md:text-7xl font-black mt-8 leading-tight">
+              Transparência Pública
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed mt-8 max-w-3xl">
+              Acompanhe informações institucionais, convênios,
+              relatórios de atividades, prestação de contas e
+              documentos públicos do INRUA.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="container-max pt-8 px-4">
-        <Alert className="border-amber-200 bg-amber-50 text-amber-900">
-          <Info className="h-4 w-4" />
-          <AlertDescription className="ml-2">
-            <strong>Transparência Ativa:</strong> O projeto <strong>Cidadania PopRua</strong> encontra-se em fase de proposta, reafirmando nosso compromisso com a clareza de dados antes e durante as parcerias.
+      {/* ALERTA */}
+      <section className="container mx-auto px-6 pt-12">
+        <Alert className="border-[#F2D04B]/20 bg-[#F2D04B]/10 text-white rounded-2xl backdrop-blur-xl">
+          <Info className="h-4 w-4 text-[#F2D04B]" />
+
+          <AlertDescription className="ml-2 text-white/80">
+            <strong className="text-white">Transparência Ativa:</strong>{" "}
+            O projeto <strong>Projeto Cidadania PopRua</strong> encontra-se
+            em fase de proposta, reafirmando nosso compromisso
+            com clareza de dados e prestação pública de contas.
           </AlertDescription>
         </Alert>
       </section>
 
-      <section className="container-max section-padding px-4">
+      {/* TABS */}
+      <section className="container mx-auto px-6 py-20">
         <Tabs defaultValue="partnerships" className="w-full">
-          {/* AJUSTE MOBILE: Menu scrollable */}
-          <div className="w-full overflow-x-auto pb-2 mb-8">
-            <TabsList className="flex w-full min-w-[450px] sm:min-w-0 sm:grid sm:grid-cols-3">
-              <TabsTrigger value="partnerships" className="flex-1">Parcerias e Projetos</TabsTrigger>
-              <TabsTrigger value="reports" className="flex-1">Relatórios de Atividades</TabsTrigger>
-              <TabsTrigger value="financial" className="flex-1">Prestação de Contas</TabsTrigger>
-            </TabsList>
+
+          {/* MENU */}
+          <div className="w-full space-y-3 mb-10">
+            <div className="flex items-center gap-2 text-white/60 md:justify-center">
+              <MousePointerClick
+                size={14}
+                className="animate-pulse"
+              />
+
+              <p className="text-[10px] uppercase tracking-widest font-bold">
+                Navegue pelas informações públicas
+              </p>
+            </div>
+
+            <div className="overflow-x-auto pb-3 scrollbar-hide">
+              <TabsList className="flex inline-flex min-w-full md:grid md:grid-cols-3 h-auto bg-transparent gap-3 p-1">
+
+                <TabsTrigger
+                  value="partnerships"
+                  className="
+                    flex-shrink-0
+                    w-[240px]
+                    md:w-full
+                    min-h-[80px]
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    data-[state=active]:bg-[#5E5BA6]/20
+                    data-[state=active]:border-[#5E5BA6]
+                    data-[state=active]:text-white
+                    text-white/70
+                    font-bold
+                    transition-all
+                  "
+                >
+                  Parcerias e Projetos
+                </TabsTrigger>
+
+                <TabsTrigger
+                  value="reports"
+                  className="
+                    flex-shrink-0
+                    w-[240px]
+                    md:w-full
+                    min-h-[80px]
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    data-[state=active]:bg-[#4D88C5]/20
+                    data-[state=active]:border-[#4D88C5]
+                    data-[state=active]:text-white
+                    text-white/70
+                    font-bold
+                    transition-all
+                  "
+                >
+                  Relatórios
+                </TabsTrigger>
+
+                <TabsTrigger
+                  value="financial"
+                  className="
+                    flex-shrink-0
+                    w-[240px]
+                    md:w-full
+                    min-h-[80px]
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    data-[state=active]:bg-[#78B84D]/20
+                    data-[state=active]:border-[#78B84D]
+                    data-[state=active]:text-white
+                    text-white/70
+                    font-bold
+                    transition-all
+                  "
+                >
+                  Prestação de Contas
+                </TabsTrigger>
+
+              </TabsList>
+            </div>
           </div>
 
-          {/* ABA 1: PARCERIAS */}
-          <TabsContent value="partnerships" className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-1 space-y-4">
-                <h3 className="font-bold text-lg px-2">Histórico e Propostas</h3>
-                <div className="flex flex-col gap-3">
-                  {partnerships.map((partnership, idx) => (
-                    <button
-                      key={partnership.id}
-                      onClick={() => setSelectedPartnership(idx)}
-                      className={`w-full text-left p-4 rounded-lg border transition-all ${
-                        selectedPartnership === idx
-                          ? "border-primary bg-primary/5 shadow-sm ring-1 ring-primary/20"
-                          : "border-border hover:border-primary/50 bg-card"
-                      }`}
+          {/* PARCERIAS */}
+          <TabsContent value="partnerships">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+              {/* MENU LATERAL */}
+              <div className="space-y-4">
+                {partnerships.map((partnership, idx) => (
+                  <button
+                    key={partnership.id}
+                    onClick={() => setSelectedPartnership(idx)}
+                    className={`
+                      w-full
+                      text-left
+                      rounded-3xl
+                      p-5
+                      border
+                      transition-all
+                      backdrop-blur-xl
+
+                      ${selectedPartnership === idx
+                        ? "bg-[#5E5BA6]/20 border-[#5E5BA6]"
+                        : "bg-white/5 border-white/10 hover:bg-white/10"
+                      }
+                    `}
+                  >
+                    <p className="font-black text-lg">
+                      {partnership.subject}
+                    </p>
+
+                    <p className="text-sm text-white/60 mt-2">
+                      {partnership.grantingAgency}
+                    </p>
+
+                    <Badge
+                      className={`mt-4 ${partnership.status === "Em Seleção"
+                        ? "bg-[#E98C37]"
+                        : "bg-[#78B84D]"
+                        }`}
                     >
-                      <p className="font-bold text-sm break-words">{partnership.subject}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{partnership.grantingAgency}</p>
-                      <Badge className={`mt-2 ${partnership.status === "Em Seleção" ? "bg-amber-500" : "bg-green-600"}`}>
-                        {partnership.status}
-                      </Badge>
-                    </button>
-                  ))}
+                      {partnership.status}
+                    </Badge>
+                  </button>
+                ))}
+              </div>
+
+              {/* CONTEÚDO */}
+              <div className="lg:col-span-2">
+                <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 backdrop-blur-2xl">
+
+                  <div className="flex items-center gap-3 mb-6">
+                    <Landmark className="text-[#F2D04B]" />
+
+                    <h2 className="text-3xl font-black">
+                      {
+                        partnerships[selectedPartnership].subject
+                      }
+                    </h2>
+                  </div>
+
+                  <p className="text-white/70 leading-relaxed mb-8">
+                    {
+                      partnerships[selectedPartnership]
+                        .description
+                    }
+                  </p>
+
+                  {/* INFO */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                      <p className="text-sm text-white/50">
+                        Órgão Parceiro
+                      </p>
+
+                      <p className="font-bold mt-2">
+                        {
+                          partnerships[selectedPartnership]
+                            .grantingAgency
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                      <p className="text-sm text-white/50">
+                        Instrumento
+                      </p>
+
+                      <p className="font-bold mt-2">
+                        {
+                          partnerships[selectedPartnership]
+                            .agreementNumber
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                      <p className="text-sm text-white/50">
+                        Valor Global
+                      </p>
+
+                      <p className="font-black text-[#F2D04B] mt-2">
+                        {
+                          partnerships[selectedPartnership]
+                            .totalValue
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                      <p className="text-sm text-white/50">
+                        Vigência
+                      </p>
+
+                      <p className="font-bold mt-2">
+                        {
+                          partnerships[selectedPartnership]
+                            .startDate
+                        }{" "}
+                        a{" "}
+                        {
+                          partnerships[selectedPartnership]
+                            .endDate
+                        }
+                      </p>
+                    </div>
+
+                  </div>
+
+                  {/* DOCUMENTOS */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <FileText className="text-[#4D88C5]" />
+
+                      <h3 className="text-2xl font-black">
+                        Documentação
+                      </h3>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {partnerships[
+                        selectedPartnership
+                      ].documents.map((doc, idx) => (
+                        <DocumentCard
+                          key={idx}
+                          title={doc.title}
+                          fileUrl={doc.url}
+                          fileName={doc.title + ".pdf"}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              <div className="lg:col-span-2">
-                {partnerships[selectedPartnership] && (
-                  <Card className="p-4 sm:p-6">
-                    <h3 className="text-xl font-bold mb-2">{partnerships[selectedPartnership].subject}</h3>
-                    <p className="text-muted-foreground text-sm mb-6">{partnerships[selectedPartnership].description}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 bg-muted/30 p-4 rounded-lg text-sm">
-                      <div><p className="font-semibold">Órgão Parceiro</p><p>{partnerships[selectedPartnership].grantingAgency}</p></div>
-                      <div><p className="font-semibold">Instrumento</p><p>{partnerships[selectedPartnership].agreementNumber}</p></div>
-                      <div><p className="font-semibold">Valor Global</p><p className="text-primary font-bold">{partnerships[selectedPartnership].totalValue}</p></div>
-                      <div><p className="font-semibold">Vigência</p><p>{partnerships[selectedPartnership].startDate} a {partnerships[selectedPartnership].endDate}</p></div>
+            </div>
+          </TabsContent>
+
+          {/* RELATÓRIOS */}
+          <TabsContent value="reports">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              {activityReports.map((report, idx) => (
+                <div
+                  key={idx}
+                  className="
+          bg-white/5
+          border
+          border-white/10
+          rounded-[32px]
+          p-8
+          backdrop-blur-2xl
+          hover:bg-white/10
+          transition-all
+          duration-300
+        "
+                >
+                  {/* HEADER */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 rounded-2xl bg-[#5E5BA6]/20">
+                      <FileText
+                        className="text-[#F2D04B]"
+                        size={26}
+                      />
                     </div>
-                    <h4 className="font-bold mb-4 flex items-center gap-2"><FileText size={18} className="text-primary" /> Documentação do Projeto</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {partnerships[selectedPartnership].documents.map((doc, idx) => (
-                        <DocumentCard key={idx} title={doc.title} fileUrl={doc.url} fileName={doc.title + ".pdf"} />
-                      ))}
+
+                    <Badge className="bg-[#4D88C5] text-white border-0">
+                      {report.date}
+                    </Badge>
+                  </div>
+
+                  {/* TÍTULO */}
+                  <h3 className="text-2xl font-black mb-4 text-white leading-tight">
+                    {report.title}
+                  </h3>
+
+                  {/* DESCRIÇÃO */}
+                  <p className="text-white/70 leading-relaxed mb-8">
+                    {report.description}
+                  </p>
+
+                  {/* BOTÃO VISUALIZAR PDF */}
+                  <a
+                    href={report.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+            flex items-center justify-between
+            w-full
+            rounded-2xl
+            border border-white/10
+            bg-[#111827]
+            hover:bg-[#1E293B]
+            transition-all
+            duration-300
+            p-5
+            group
+          "
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 rounded-xl bg-[#4D88C5]/20">
+                        <FileText
+                          className="text-[#4D88C5]"
+                          size={22}
+                        />
+                      </div>
+
+                      <div>
+                        <p className="font-bold text-white">
+                          Visualizar Documento
+                        </p>
+
+                        <p className="text-sm text-white/60">
+                          Abrir relatório em PDF
+                        </p>
+                      </div>
                     </div>
-                  </Card>
-                )}
+
+                    <div
+                      className="
+                      px-4 py-2
+                      rounded-xl
+                      bg-[#5E5BA6]/20
+                      text-[#F2D04B]
+                      font-bold
+                      text-sm
+                      group-hover:scale-105
+                      transition-transform
+                    "
+                    >
+                      Abrir
+                    </div>
+                  </a>
+                </div>
+              ))}
+
+            </div>
+          </TabsContent>
+
+          {/* FINANCEIRO */}
+          <TabsContent value="financial">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+              {/* BARRAS */}
+              <Card className="bg-white/5 border-white/10 rounded-[32px] p-8 backdrop-blur-2xl">
+                <div className="flex items-center gap-3 mb-8">
+                  <TrendingUp className="text-[#78B84D]" />
+
+                  <h3 className="text-2xl font-black text-white">
+                    Execução Financeira
+                  </h3>
+                </div>
+
+                <div className="h-[320px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={expenseData} layout="vertical">
+                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+
+                      <XAxis type="number" hide />
+
+                      <YAxis
+                        dataKey="category"
+                        type="category"
+                        tick={{ fill: "#fff" }}
+                        width={100}
+                      />
+
+                      <Tooltip />
+
+                      <Bar
+                        dataKey="value"
+                        radius={[0, 8, 8, 0]}
+                      >
+                        {expenseData.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={entry.fill}
+                          />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </Card>
+
+              {/* PIE */}
+              <Card className="bg-white/5 border-white/10 rounded-[32px] p-8 backdrop-blur-2xl">
+                <div className="flex items-center gap-3 mb-8">
+                  <PieChartIcon className="text-[#F2D04B]" />
+
+                  <h3 className="text-2xl font-black text-white">
+                    Fontes de Recursos
+                  </h3>
+                </div>
+
+                <div className="h-[320px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={revenueData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={65}
+                        outerRadius={95}
+                        paddingAngle={5}
+                        dataKey="value"
+                      >
+                        {revenueData.map((entry, index) => (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={entry.color}
+                          />
+                        ))}
+                      </Pie>
+
+                      <Tooltip />
+
+                      <Legend />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </Card>
+
+            </div>
+
+            {/* ALERTA */}
+            <div className="mt-10 bg-[#F2D04B]/10 border border-[#F2D04B]/20 rounded-[32px] p-6 flex items-start gap-4">
+              <AlertCircle className="text-[#F2D04B] mt-1" />
+
+              <div>
+                <h4 className="font-black text-lg">
+                  Prestação de Contas Pública
+                </h4>
+
+                <p className="text-white/70 mt-2 leading-relaxed">
+                  Os dados apresentados possuem caráter
+                  demonstrativo e institucional, garantindo
+                  transparência sobre a execução das ações e
+                  utilização de recursos vinculados às atividades
+                  sociais do INRUA.
+                </p>
               </div>
             </div>
-          </TabsContent>
 
-          {/* ABA 2: RELATÓRIOS (COM O DAS MULHERES) */}
-          <TabsContent value="reports" className="space-y-6">
-            <h3 className="text-2xl font-bold mb-4 px-2">Relatórios de Gestão e Impacto</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-2">
-              {activityReports.map((report, idx) => (
-                <Card key={idx} className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg"><FileText className="text-primary" size={24} /></div>
-                    <Badge variant="secondary">{report.date}</Badge>
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">{report.title}</h4>
-                  <p className="text-sm text-muted-foreground mb-6 line-clamp-3">{report.description}</p>
-                  <DocumentCard title="Baixar PDF" fileUrl={report.url} fileName={report.title + ".pdf"} />
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* ABA 3: FINANCEIRO */}
-          <TabsContent value="financial" className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-               <Card className="p-6">
-                  <h4 className="font-bold mb-4">Previsão de Execução Financeira</h4>
-                  <div className="h-[300px] w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={expenseData} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" hide />
-                        <YAxis dataKey="category" type="category" width={100} fontSize={12} />
-                        <Tooltip formatter={(value) => `R$ ${value}`} />
-                        <Bar dataKey="value" fill="#003d82" radius={[0, 4, 4, 0]}>
-                          {expenseData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.fill} />)}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-               </Card>
-               <Card className="p-6">
-                  <h4 className="font-bold mb-4">Fontes de Recurso</h4>
-                  <div className="h-[300px] w-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <Pie data={revenueData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-                          {revenueData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-               </Card>
-            </div>
           </TabsContent>
         </Tabs>
       </section>

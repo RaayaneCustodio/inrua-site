@@ -1,10 +1,15 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { HeroBanner } from "@/components/hero-banner"
-import { DocumentCard } from "@/components/document-card"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Users, TrendingUp, MapPin, Calendar } from "lucide-react"
+
+import {
+  Users,
+  TrendingUp,
+  MapPin,
+  Calendar,
+  ShieldCheck,
+  HeartHandshake,
+  ArrowRight,
+} from "lucide-react"
 
 export default function AcoesPage() {
   const projects = [
@@ -14,264 +19,377 @@ export default function AcoesPage() {
       category: "Habitação",
       status: "Em Execução",
       description:
-        "Programa inovador que promove o acesso imediato à moradia de forma segura, individual, integrada à comunidade e localizada no próprio município. Reconhecido internacionalmente como melhor prática.",
+        "Programa inovador que promove o acesso imediato à moradia segura e integrada à comunidade.",
       publicTarget: "500+ pessoas em situação de rua",
       objectives:
-        "Garantir acesso imediato à moradia segura como direito fundamental e porta de entrada para inclusão social e acesso a direitos.",
+        "Garantir acesso imediato à moradia e inclusão social.",
       activities: [
-        "Mapeamento de moradia disponível em parceria com prefeituras",
-        "Acompanhamento psicossocial individualizado",
-        "Mediação com proprietários e acesso a subsídios",
-        "Integração a serviços de saúde e assistência social",
+        "Mapeamento de moradias",
+        "Acompanhamento psicossocial",
+        "Integração com serviços públicos",
+        "Mediação habitacional",
       ],
-      results: "Até 2024: 320+ pessoas alojadas com 78% de permanência em moradia",
+      results:
+        "Pessoas atendidas com estabilidade habitacional.",
       startDate: "2018",
       endDate: "Contínuo",
       image: "/moradia-primeiro.png",
-      reports: [
-        { title: "Moradia Primeiro: Da Teoria à Prática", url: "/docs/projetos/MoradiaPrimeiro.pdf" },
-      ],
+      color: "from-[#5E5BA6] to-[#4D88C5]",
     },
+
     {
       id: 2,
       name: "Dia Nacional de Luta e Luto",
-      category: "Mobilização e Direitos",
+      category: "Mobilização",
       status: "Realizado",
       image: "/Luta-Luto.png",
       description:
-        "Evento alusivo ao Dia Nacional de Luta da População em Situação de Rua, em memória à resistência e organização coletiva desde o 'Massacre da Sé' (2004). Três dias de serviços públicos, eventos culturais e acolhimento na Praça General Osório.",
-      publicTarget: "População em situação de rua de Curitiba",
+        "Evento em memória à resistência da população em situação de rua.",
+      publicTarget: "População em situação de rua",
       objectives:
-        "Ofertar serviços civis essenciais (documentação, justiça), promover a cultura e dignidade através de ações de cuidado (corte de cabelo, alimentação) e fortalecer a luta política.",
+        "Fortalecer a luta por direitos e promover cidadania.",
       activities: [
-        "Mutirão do Sistema de Justiça (TJPR, DPE-PR e MPPR) para regularização documental",
-        "Emissão de certidões, RG e regularização eleitoral/militar",
-        "Ações culturais: Roda de samba e almoço comunitário (Feijoada)",
-        "Serviços de cuidado: Corte de cabelo, varal solidário e consultas médicas/veterinárias",
+        "Atendimentos jurídicos",
+        "Regularização documental",
+        "Ações culturais",
+        "Serviços de saúde",
       ],
-      results: "Mobilização massiva com atendimentos jurídicos e de saúde gratuitos, além de integração comunitária.",
-      startDate: "Agosto 2023",
+      results:
+        "Centenas de atendimentos e mobilização social.",
+      startDate: "2023",
       endDate: "Concluído",
-      reports: [
-        { title: "Dia de Luta e Luto", url: "/docs/projetos/MoradiaPrimeiro.pdf" },
-      ],
+      color: "from-[#E98C37] to-[#F2D04B]",
     },
+
     {
       id: 3,
-      name: "Cozinha Solidária MNPR e INRua",
+      name: "Cozinha Solidária",
       category: "Segurança Alimentar",
       status: "Em Execução",
       image: "/cozinha-solidaria.png",
       description:
-        "Parceria estratégica entre o Movimento Nacional da População de Rua (MNPR) e o INRua para combater a fome em Curitiba. Prepara e distribui refeições nutritivas diariamente, garantindo segurança alimentar para a população vulnerável.",
-      publicTarget: "Pessoas em situação de rua e vulnerabilidade social",
+        "Distribuição de refeições e ações de combate à fome.",
+      publicTarget:
+        "Pessoas em vulnerabilidade social",
       objectives:
-        "Combater a fome e a insegurança alimentar de forma imediata, além de promover a dignidade e os direitos humanos através do acolhimento e da alimentação de qualidade.",
+        "Garantir segurança alimentar e acolhimento.",
       activities: [
-        "Gestão e arrecadação de alimentos e recursos",
-        "Preparação diária de refeições por voluntários e equipe",
-        "Distribuição organizada de marmitas em pontos estratégicos",
-        "Articulação política para inclusão no Programa de Aquisição de Alimentos (PAA)",
+        "Distribuição de marmitas",
+        "Arrecadação de alimentos",
+        "Ações solidárias",
+        "Parcerias comunitárias",
       ],
-      results: "Milhares de refeições distribuídas mensalmente, garantindo o direito humano à alimentação adequada.",
+      results:
+        "Milhares de refeições distribuídas mensalmente.",
       startDate: "Contínuo",
       endDate: "Em atividade",
-      reports: [],
+      color: "from-[#78B84D] to-[#4D88C5]",
     },
+
     {
       id: 4,
-      name: "Conferência Livre de Mulheres em Situação de Rua",
-      category: "Direitos e Participação Social",
+      name: "Conferência Livre de Mulheres",
+      category: "Direitos Humanos",
       status: "Realizado",
       image: "/mulheres.jpeg",
       description:
-        "Encontro histórico realizado em Curitiba para dar voz e protagonismo às mulheres em situação de rua. O evento debateu moradia, saúde, segurança e trabalho, visando a construção de políticas públicas interseccionais.",
-      publicTarget: "Mulheres em situação de rua, ativistas e pesquisadoras",
+        "Evento voltado ao protagonismo feminino e construção de políticas públicas.",
+      publicTarget:
+        "Mulheres em situação de rua",
       objectives:
-        "Documentar demandas urgentes, combater a invisibilidade e a violência contra a mulher em situação de rua e eleger delegadas para a etapa nacional da 5ª Conferência de Políticas para Mulheres.",
+        "Combater invisibilidade e violência.",
       activities: [
-        "Grupos temáticos de discussão (Saúde, Trabalho, Moradia e Segurança)",
-        "Relatos de trajetórias de vida e superação",
-        "Formulação de propostas para protocolos de segurança e moradia popular",
-        "Eleição de delegadas titulares e suplentes",
+        "Debates temáticos",
+        "Relatos de vida",
+        "Formulação de propostas",
+        "Participação social",
       ],
-      results: "Elaboração de relatoria técnica enviada ao Governo Federal e fortalecimento da rede de proteção às mulheres em Curitiba.",
-      startDate: "Agosto 2025",
+      results:
+        "Conhecimento adquirido.",
+      startDate: "2025",
       endDate: "Concluído",
-      reports: [
-        { title: "Relatoria Final da Conferência", url: "/docs/transparencia/RelatorioMulheres.pdf" },
-      ],
-    },
-    {
-      id: 4,
-      name: "Ato Pela Pop Rua: Contra Internação Involuntária",
-      category: "Direitos Humanos",
-      status: "Mobilização",
-      image: "/atoPopRua.jpeg",
-      description:
-        "Mobilização em frente à Prefeitura de Curitiba contra ações higienistas de internação forçada. Defendemos que cuidado sem laudo médico e sem devido processo legal é arbítrio, não saúde. Internar sem garantir moradia é condenar ao ciclo de sofrimento.",
-      publicTarget: "Poder público e sociedade civil",
-      objectives:
-        "Denunciar violações de direitos humanos disfarçadas de 'cuidado' e exigir políticas públicas estruturantes de moradia, renda e saúde humanizada, evitando a judicialização da vida.",
-      activities: [
-        "Ato público em frente à Prefeitura de Curitiba",
-        "Advocacy contra a internação compulsória sem critério médico",
-        "Mobilização social: 'Nenhum passo atrás na luta por direitos'",
-        "Defesa de soluções reais: Moradia Primeiro e atendimento psicossocial",
-      ],
-      results: "Visibilidade para a pauta da luta antimanicomial e defesa intransigente dos direitos civis da população de rua.",
-      startDate: "Ação Pontual",
-      endDate: "Realizado",
-      reports: [],
+      color: "from-[#C83E3B] to-[#E98C37]",
     },
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
+      {/* FUNDO */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
+
+        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
+
+        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
+      </div>
+
       <Header />
 
-      {/* Hero Banner */}
-      <section className="container-max pt-12 px-4">
-        <HeroBanner
-          title="Programas e Ações do INRUA"
-          description="Confira todos os programas que desenvolvemos para garantir direitos e dignidade da população em situação de rua"
-        />
+      {/* HERO */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/movimento2.png"
+            alt="Projetos INRUA"
+            className="w-full h-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-[#020617]/85" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/60 via-[#4D88C5]/40 to-[#78B84D]/40" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 py-28">
+          <div className="max-w-5xl">
+            <span className="bg-[#F2D04B] text-black px-5 py-2 rounded-full font-black text-sm">
+              PROJETOS • DIREITOS HUMANOS • INCLUSÃO SOCIAL
+            </span>
+
+            <h1 className="text-5xl md:text-7xl font-black mt-8 leading-tight">
+              Projetos e Ações do INRUA
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed mt-8 max-w-3xl">
+              Conheça nossas iniciativas voltadas à dignidade,
+              inclusão social, segurança alimentar, moradia e
+              fortalecimento de políticas públicas para a população
+              em situação de rua.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* Introdução */}
-      <section className="container-max section-padding px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {projects.length} Ações de Impacto
+      {/* INTRO */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            Atuação Social
+          </span>
+
+          <h2 className="text-5xl font-black mt-4">
+            {projects.length} Projetos de Impacto Social
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Atuamos em diversas frentes para garantir direitos fundamentais,
-            promovendo autonomia, segurança alimentar e incidência política.
+
+          <p className="text-white/70 text-lg mt-6 leading-relaxed">
+            O INRUA atua em diversas frentes sociais e institucionais
+            para garantir direitos fundamentais, acolhimento,
+            inclusão e cidadania.
           </p>
         </div>
       </section>
 
-      {/* Grid de Projetos */}
-      <section className="container-max section-padding px-4">
-        <div className="space-y-8">
+      {/* PROJETOS */}
+
+      <section className="container mx-auto px-6 pb-28">
+        <div className="space-y-12">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow border-border">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-                {/* Imagem */}
-                <div className="md:col-span-1">
-                  <div className="h-64 md:h-full min-h-[200px] bg-muted rounded-lg overflow-hidden">
+            <div
+              key={project.id}
+              className={`bg-gradient-to-br ${project.color} rounded-[32px] p-[2px] shadow-[0_20px_80px_rgba(0,0,0,0.35)]`}
+            >
+              <div className="bg-[#111827]/95 backdrop-blur-2xl rounded-[30px] overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0 items-stretch">
+
+                  {/* IMAGEM */}
+                  <div className="relative overflow-hidden group h-[260px] md:h-[320px] lg:h-full">
                     <img
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image}
                       alt={project.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="
+                      w-full
+                      h-full
+                      object-cover
+                      object-center
+                      transition-transform
+                      duration-700
+                      ease-out
+                      group-hover:scale-110
+                    "
                     />
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+                    {/* Categoria + Título */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                      <span className="bg-[#F2D04B] text-black px-4 py-2 rounded-full text-xs md:text-sm font-black shadow-lg">
+                        {project.category}
+                      </span>
+
+                      <h2 className="text-2xl md:text-3xl font-black text-white mt-4 leading-tight">
+                        {project.name}
+                      </h2>
+                    </div>
                   </div>
-                </div>
 
-                {/* Conteúdo */}
-                <div className="md:col-span-2 flex flex-col justify-between">
-                  <div>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge className="bg-primary text-primary-foreground">{project.category}</Badge>
-                      <Badge variant="outline" className={project.status === "Em Execução" ? "border-green-500 text-green-700 bg-green-50" : "border-blue-500 text-blue-700 bg-blue-50"}>
-                        {project.status}
-                      </Badge>
-                    </div>
+                  {/* CONTEÚDO */}
+                  <div className="p-8 lg:p-10 flex flex-col justify-between">
+                    <div>
+                      {/* BADGES */}
+                      <div className="flex flex-wrap gap-3 mb-6">
+                        <span className="bg-[#78B84D]/15 text-[#78B84D] border border-[#78B84D]/20 px-4 py-2 rounded-full text-sm font-bold">
+                          {project.status}
+                        </span>
 
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{project.name}</h3>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                        <span className="bg-[#4D88C5]/15 text-[#60A5FA] border border-[#60A5FA]/20 px-4 py-2 rounded-full text-sm font-bold">
+                          Projeto Institucional
+                        </span>
+                      </div>
 
-                    {/* Informações principais */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-sm">
-                      <div className="flex items-start gap-2">
-                        <Users size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-foreground">Público-Alvo</p>
-                          <p className="text-muted-foreground">{project.publicTarget}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Calendar size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-foreground">Período</p>
-                          <p className="text-muted-foreground">
-                            {project.startDate} {project.endDate !== "Contínuo" && `a ${project.endDate}`}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-foreground">Abrangência</p>
-                          <p className="text-muted-foreground">Brasil / Paraná</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <TrendingUp size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold text-foreground">Status Atual</p>
-                          <p className="text-muted-foreground">{project.status}</p>
-                        </div>
-                      </div>
-                    </div>
+                      {/* DESCRIÇÃO */}
+                      <p className="text-white/75 text-lg leading-relaxed mb-8">
+                        {project.description}
+                      </p>
 
-                    {/* Objetivos e Atividades (expandible) */}
-                    <details className="cursor-pointer group mb-4 border border-border rounded-md p-3">
-                      <summary className="font-semibold text-foreground hover:text-primary transition-colors list-none flex justify-between items-center">
-                        Ver detalhes e objetivos
-                        <span className="text-xs text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
-                      </summary>
-                      <div className="mt-4 space-y-4 pt-4 border-t border-border">
-                        <div>
-                          <h5 className="font-semibold text-foreground mb-2">Objetivos</h5>
-                          <p className="text-sm text-muted-foreground">{project.objectives}</p>
-                        </div>
-                        <div>
-                          <h5 className="font-semibold text-foreground mb-2">Atividades Principais</h5>
-                          <ul className="space-y-1 text-sm text-muted-foreground">
-                            {project.activities.map((activity, idx) => (
-                              <li key={idx}>• {activity}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 className="font-semibold text-foreground mb-2">Resultados Alcançados</h5>
-                          <p className="text-sm text-muted-foreground">{project.results}</p>
-                        </div>
-                      </div>
-                    </details>
-
-                    {/* Relatórios */}
-                    {project.reports.length > 0 && (
-                      <div className="mt-4 pt-4 border-t border-border">
-                        <h5 className="font-semibold text-foreground mb-3">Relatórios e Documentação</h5>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {project.reports.map((report, idx) => (
-                            <DocumentCard
-                              key={idx}
-                              title={report.title}
-                              fileUrl={report.url}
-                              fileName={`${project.name.toLowerCase().replace(/\s+/g, "-")}-${idx}.pdf`}
+                      {/* INFO */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+                          <div className="flex items-start gap-3">
+                            <Users
+                              size={22}
+                              className="text-[#F2D04B] mt-1"
                             />
+
+                            <div>
+                              <p className="font-black text-white">
+                                Público-Alvo
+                              </p>
+
+                              <p className="text-white/70 text-sm mt-1">
+                                {project.publicTarget}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+                          <div className="flex items-start gap-3">
+                            <Calendar
+                              size={22}
+                              className="text-[#78B84D] mt-1"
+                            />
+
+                            <div>
+                              <p className="font-black text-white">
+                                Período
+                              </p>
+
+                              <p className="text-white/70 text-sm mt-1">
+                                {project.startDate} • {project.endDate}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+                          <div className="flex items-start gap-3">
+                            <MapPin
+                              size={22}
+                              className="text-[#E98C37] mt-1"
+                            />
+
+                            <div>
+                              <p className="font-black text-white">
+                                Abrangência
+                              </p>
+
+                              <p className="text-white/70 text-sm mt-1">
+                                Curitiba • Paraná • Brasil
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition">
+                          <div className="flex items-start gap-3">
+                            <TrendingUp
+                              size={22}
+                              className="text-[#C83E3B] mt-1"
+                            />
+
+                            <div>
+                              <p className="font-black text-white">
+                                Resultados
+                              </p>
+
+                              <p className="text-white/70 text-sm mt-1">
+                                Impacto social contínuo
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* OBJETIVOS */}
+                      <div className="mb-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <ShieldCheck
+                            className="text-[#F2D04B]"
+                            size={24}
+                          />
+
+                          <h3 className="text-2xl font-black">
+                            Objetivos
+                          </h3>
+                        </div>
+
+                        <p className="text-white/70 leading-relaxed">
+                          {project.objectives}
+                        </p>
+                      </div>
+
+                      {/* ATIVIDADES */}
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <HeartHandshake
+                            className="text-[#78B84D]"
+                            size={24}
+                          />
+
+                          <h3 className="text-2xl font-black">
+                            Principais Atividades
+                          </h3>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-3">
+                          {project.activities.map((activity, idx) => (
+                            <div
+                              key={idx}
+                              className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-3 hover:bg-white/10 transition"
+                            >
+                              <div className="w-3 h-3 rounded-full bg-[#F2D04B]" />
+
+                              <p className="text-white/75">
+                                {activity}
+                              </p>
+                            </div>
                           ))}
                         </div>
                       </div>
-                    )}
+                    </div>
+
+                    {/* RESULTADO */}
+                    <div className="mt-10 bg-gradient-to-r from-[#5E5BA6]/20 to-[#4D88C5]/20 border border-white/10 rounded-3xl p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <ArrowRight
+                          className="text-[#F2D04B]"
+                          size={24}
+                        />
+
+                        <h3 className="text-xl font-black">
+                          Resultados Alcançados
+                        </h3>
+                      </div>
+
+                      <p className="text-white/75 leading-relaxed">
+                        {project.results}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="container-max section-padding px-4">
-        <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Conheça Nosso Trabalho de Perto</h2>
-          <p className="text-lg mb-8 text-slate-300 max-w-2xl mx-auto">
-            Acesse nossa seção de transparência para dados financeiros, parcerias públicas detalhadas e os relatórios anuais de gestão.
-          </p>
         </div>
       </section>
 

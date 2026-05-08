@@ -2,248 +2,279 @@
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { HeroBanner } from "@/components/hero-banner"
-import { StatsCard } from "@/components/stats-card"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import Link from "next/link"
-import { Users, Heart, Target, Eye, ArrowRight } from "lucide-react"
-import { SponsorsCarousel } from "@/components/sponsors-carousel"
+
+import {
+  Users,
+  Heart,
+  Target,
+  Eye,
+} from "lucide-react"
+
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   const highlights = [
     {
-      icon: <Users size={32} />,
+      icon: <Users size={34} />,
       label: "Pessoas Impactadas",
       value: "8.5K+",
-      description: "População em situação de rua atendida desde 2016",
+      description:
+        "Atendimento e acolhimento em diversas regiões do Brasil.",
+      color: "from-[#78B84D] to-[#4D88C5]",
     },
     {
-      icon: <Heart size={32} />,
+      icon: <Heart size={34} />,
       label: "Anos de Atuação",
       value: "8+",
-      description: "Comprometidos com direitos humanos desde 2016",
+      description: "Defendendo direitos humanos desde 2016.",
+      color: "from-[#E98C37] to-[#F2D04B]",
     },
     {
-      icon: <Target size={32} />,
+      icon: <Target size={34} />,
       label: "Estados Atendidos",
       value: "15+",
-      description: "Presença nacional em defesa de direitos",
+      description: "Atuação nacional em políticas públicas.",
+      color: "from-[#5E5BA6] to-[#4D88C5]",
     },
     {
-      icon: <Eye size={32} />,
-      label: "Transparência",
+      icon: <Eye size={34} />,
+      label: "Conformidade MROSC",
       value: "100%",
-      description: "Conformidade com Lei 13.019/2014 (MROSC)",
+      description: "Compromisso com transparência institucional.",
+      color: "from-[#C83E3B] to-[#E98C37]",
     },
   ]
 
-  const features = [
-    {
-      title: "Sobre Nós",
-      description: "Conheça nossa história, missão e compromisso com a população em situação de rua.",
-      href: "/sobre",
-      icon: "📋",
-    },
-    {
-      title: "Ações & Projetos",
-      description: "Explore nossos programas de direitos, moradia e políticas públicas.",
-      href: "/acoes",
-      icon: "🏠",
-    },
-    {
-      title: "Como Ajudar",
-      description: "Saiba como você pode contribuir para nossa missão de garantir dignidade.",
-      href: "/contato",
-      icon: "🤝",
-    },
-    {
-      title: "Transparência",
-      description: "Acesse parcerias, relatórios financeiros e documentação completa conforme a lei.",
-      href: "/transparencia",
-      icon: "🔍",
-    },
-  ]
-
-  const galleryItems = [
-    {
-      
-      title: "Moradia Primeiro", 
-      category: "Habitação",
-      image: "/moradia-primeiro1.png", 
-    },
-    {
-      title: "Movimento de Rua",
-      category: "Habitação",
-      image: "/movimento2.png", 
-    },
+  const projects = [
     {
       title: "Moradia Primeiro",
       category: "Habitação",
-      image: "/moradia-primeiro2.png", 
+      image: "/moradia-primeiro1.png",
     },
     {
       title: "Movimento de Rua",
-      category: "Habitação",
-      image: "/movimento.png", 
+      category: "Direitos Humanos",
+      image: "/movimento.png",
     },
     {
       title: "Cozinha Solidária",
       category: "Alimentação",
-      image: "/cozinha-solidaria.png", 
-    },
-    {
-      title: "Cozinha Solidária",
-      category: "Alimentação",
-      image: "/cozinha-solidaria2.png", 
+      image: "/cozinha-solidaria.png",
     },
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
+      {/* EFEITOS DE FUNDO */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
+
+        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
+
+        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
+      </div>
+
       <Header />
 
-      {/* Hero Section */}
-      <section className="container-max pt-12">
-        <HeroBanner
-          title="Instituto Nacional de Direitos Humanos da População de Rua"
-          description="Desde 2016, defendemos a dignidade e os direitos fundamentais da população em situação de rua através de políticas públicas, pesquisa e ações concretas."
-          ctaText="Acessar Transparência"
-          ctaHref="/transparencia"
-        />
-      </section>
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/movimento2.png"
+            alt="INRUA"
+            className="w-full h-full object-cover"
+          />
 
-      {/* Quick Stats */}
-      <section className="container-max section-padding">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nosso Impacto em Números</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Desde 2016, trabalhamos pela garantia de direitos e dignidade da população em situação de rua em todo o
-            Brasil.
-          </p>
+          <div className="absolute inset-0 bg-[#020617]/85" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/70 via-[#4D88C5]/40 to-[#78B84D]/40" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {highlights.map((item, idx) => (
-            <StatsCard key={idx} {...item} />
-          ))}
-        </div>
-      </section>
+        <div className="relative z-10 container mx-auto px-6 py-24">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-2 bg-[#F2D04B] text-black px-5 py-2 rounded-full font-bold shadow-2xl">
+              Transparência • Direitos Humanos • Inclusão Social
+            </div>
 
-      {/* Features Grid - CORRIGIDO (Fundo Cinza Total) */}
-      <section className="w-full bg-muted/30 section-padding">
-        <div className="container-max px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Navegue por Nossas Seções</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Conheça nossas ações, documentos e dados sobre defesa de direitos da população de rua.
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8 text-white">
+              Instituto Nacional de Direitos Humanos da População de Rua
+            </h1>
+
+            <p className="text-xl text-white/80 mt-8 leading-relaxed max-w-3xl">
+              Desde 2016 promovendo dignidade, inclusão social e defesa dos
+              direitos da população em situação de rua através de ações
+              concretas, projetos sociais e políticas públicas.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => (
-              <Link key={feature.href} href={feature.href}>
-                <Card className="h-full p-6 cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all group bg-white/50 backdrop-blur-sm">
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="font-bold text-lg text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
-                  <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                    Acessar
-                    <ArrowRight size={16} />
-                  </div>
-                </Card>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link href="/transparencia">
+                <Button className="bg-[#F2D04B] hover:bg-[#E98C37] text-black font-black px-8 py-6 text-lg rounded-2xl shadow-[0_20px_60px_rgba(242,208,75,0.35)]">
+                  Área de Transparência
+                </Button>
               </Link>
-            ))}
+
+              <Link href="/acoes">
+                <Button
+                  variant="outline"
+                  className="border-white/30 bg-white/10 backdrop-blur-xl text-white hover:bg-white hover:text-black px-8 py-6 text-lg rounded-2xl"
+                >
+                  Conheça Nossos Projetos
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="container-max section-padding">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Galeria de Ações</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conheça visualmente o trabalho que desenvolvemos em defesa dos direitos da população em situação de rua.
+      {/* IMPACTO */}
+      <section className="container mx-auto px-6 py-28">
+        <div className="text-center mb-16">
+          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            Impacto Social
+          </span>
+
+          <h2 className="text-5xl font-black mt-4">
+            Nosso Impacto em Números
+          </h2>
+
+          <p className="text-lg text-white/70 max-w-3xl mx-auto mt-6">
+            Trabalhamos diariamente para garantir direitos fundamentais,
+            inclusão social e dignidade humana.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, idx) => (
-            <div key={idx} className="group cursor-pointer overflow-hidden rounded-lg">
-              <div className="relative overflow-hidden h-64 bg-muted">
-                {/* Verifica se a imagem existe, senão usa placeholder */}
-                <img
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  onError={(e) => {
-                    // Fallback se a imagem não carregar
-                    //Grande Teste
-                    (e.target as HTMLImageElement).src = "https://placehold.co/600x400?text=Sem+Imagem"
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <h3 className="text-white font-bold">{item.title}</h3>
-                  <p className="text-white/80 text-sm">{item.category}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {highlights.map((item, idx) => (
+            <div
+              key={idx}
+              className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:scale-[1.03] transition-all duration-300`}
+            >
+              <div className="bg-[#111827] rounded-3xl p-8 h-full min-h-[320px] flex flex-col">
+                <div className="mb-6 text-white">
+                  {item.icon}
                 </div>
+
+                <h3 className="text-5xl font-black mb-3 text-white">
+                  {item.value}
+                </h3>
+
+                <p className="font-bold text-lg mb-4 text-white">
+                  {item.label}
+                </p>
+
+                <p className="text-white/70 text-sm leading-relaxed mt-auto">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="flex justify-center mt-12">
-          <Link href="/acoes">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-            >
-              Ver Todos os Programas
-            </Button>
-          </Link>
-        </div>
       </section>
 
-      {/* Patrocinadores - CORRIGIDO (Fundo Cinza Total e Centralizado) */}
-      <section className="w-full bg-muted/30 section-padding">
-        <div className="container-max px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Incentivadores</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Incentivos que fortalecem nossa missão de defender os direitos da população em situação de rua.
+      {/* PROJETOS */}
+      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#78B84D] font-bold uppercase tracking-widest">
+              Projetos Sociais
+            </span>
+
+            <h2 className="text-5xl font-black mt-4">
+              Projetos e Ações
+            </h2>
+
+            <p className="text-lg text-white/70 max-w-3xl mx-auto mt-6">
+              Conheça nossas iniciativas voltadas à garantia de direitos e
+              inclusão da população em situação de rua.
             </p>
           </div>
 
-          <div className="flex justify-center w-full items-center">
-            <SponsorsCarousel />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="group overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.45)] hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className="relative h-80 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                  <div className="absolute bottom-0 p-6 text-white">
+                    <span className="bg-[#F2D04B] text-black px-3 py-1 rounded-full text-xs font-black">
+                      {project.category}
+                    </span>
+
+                    <h3 className="text-3xl font-black mt-4">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="flex justify-center mt-8">
-            <Link href="/incentivos">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-              >
-                Ver Todos os Incentivadores
+          <div className="flex justify-center mt-14">
+            <Link href="/acoes">
+              <Button className="bg-[#5E5BA6] hover:bg-[#4D88C5] text-white px-8 py-6 rounded-2xl text-lg font-black shadow-[0_20px_60px_rgba(94,91,166,0.45)]">
+                Ver Todos os Projetos
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="container-max section-padding">
-        <div className="gradient-accent rounded-lg p-12 text-center text-primary-foreground">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparência</h2>
-          <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Acesse todos os dados,incentivos e documentos financeiros em nossa área de transparência.
-          </p>
-          <Link href="/transparencia">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-              Acessar Transparência Completa
-            </Button>
-          </Link>
+      {/* TRANSPARÊNCIA */}
+      <section className="py-28 bg-gradient-to-r from-[#5E5BA6] via-[#4D88C5] to-[#78B84D] relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="bg-[#111827]/50 backdrop-blur-2xl rounded-[32px] p-12 border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+            <div className="grid lg:grid-cols-2 gap-14 items-center">
+              <div>
+                <span className="bg-[#F2D04B] text-black px-4 py-2 rounded-full font-black text-sm">
+                  LEI 13.019/2014 • MROSC
+                </span>
+
+                <h2 className="text-5xl font-black text-white mt-6 mb-6">
+                  Transparência Institucional
+                </h2>
+
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Disponibilizamos publicamente relatórios financeiros,
+                  documentos institucionais, editais e informações de
+                  prestação de contas conforme as exigências do MROSC.
+                </p>
+
+                <Link href="/transparencia">
+                  <Button className="mt-8 bg-[#F2D04B] hover:bg-[#E98C37] text-black font-black px-8 py-6 rounded-2xl text-lg shadow-[0_20px_60px_rgba(242,208,75,0.35)]">
+                    Acessar Portal de Transparência
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 gap-5">
+                {[
+                  "Prestação de Contas",
+                  "Relatórios",
+                  "Estatuto",
+                  "Documentos Oficiais",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-7 text-white font-bold text-center shadow-xl hover:bg-white/20 transition-all"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

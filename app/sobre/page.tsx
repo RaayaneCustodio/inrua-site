@@ -1,194 +1,313 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { HeroBanner } from "@/components/hero-banner"
-import { DocumentCard } from "@/components/document-card"
 import { Card } from "@/components/ui/card"
-import { Check } from "lucide-react"
-import { TeamCard } from "@/components/team-card"
+
+import {
+  Check,
+  ShieldCheck,
+  Users,
+  Landmark,
+  HeartHandshake,
+  FileText,
+} from "lucide-react"
 
 export default function SobrePage() {
   const values = [
     {
       title: "Dignidade Humana",
       description:
-        "Reconhecimento da dignidade e direitos fundamentais de toda pessoa, especialmente a população em situação de rua",
+        "Reconhecimento da dignidade e dos direitos fundamentais da população em situação de rua.",
     },
     {
       title: "Justiça Social",
-      description: "Combate às desigualdades e garantia de acesso a políticas públicas para todos",
+      description:
+        "Combate às desigualdades sociais e promoção de inclusão e cidadania.",
     },
     {
       title: "Transparência",
-      description: "Compromisso inabalável com a prestação de contas e divulgação de informações",
+      description:
+        "Compromisso institucional com prestação de contas e acesso público às informações.",
     },
     {
       title: "Integridade",
-      description: "Ética e integridade em todas as operações e relacionamentos institucionais",
+      description:
+        "Atuação ética, responsável e comprometida com direitos humanos.",
     },
     {
       title: "Sustentabilidade",
-      description: "Impacto duradouro que contribui para desenvolvimento social e ambiental sustentável",
+      description:
+        "Projetos com impacto social contínuo e desenvolvimento sustentável.",
     },
     {
       title: "Colaboração",
-      description: "Parcerias estratégicas com governos, entidades e organizações para ampliar alcance",
+      description:
+        "Construção coletiva com movimentos sociais, organizações e governos.",
     },
   ]
 
-  // DOCUMENTOS - Configurados para a pasta public/docs/sobre
-  const documents = [
+  const areas = [
     {
-      title: "Estatuto Social",
-      description: "Documento oficial que define os objetivos, governança e finalidade da organização.",
-      fileUrl: "/docs/sobre/estatuto-inrua.pdf",
-      fileName: "Estatuto Social.pdf",
-      date: "Vigente",
+      title: "Direitos Humanos",
+      description:
+        "Defesa e promoção dos direitos fundamentais da população em situação de rua.",
+      icon: <ShieldCheck size={26} />,
+      color: "from-[#5E5BA6] to-[#4D88C5]",
     },
     {
-      title: "Ata de Eleição da Diretoria",
-      description: "Ata da Assembleia Geral Ordinária que elegeu a atual diretoria (Mandato 2023-2026).",
-      fileUrl: "/docs/sobre/ata-diretoria.pdf",
-      fileName: "Ata Diretoria 2023-2026.pdf",
-      date: "Março 2023",
+      title: "Políticas Públicas",
+      description:
+        "Participação na construção e fortalecimento de políticas públicas inclusivas.",
+      icon: <Landmark size={26} />,
+      color: "from-[#78B84D] to-[#4D88C5]",
     },
     {
-      title: "Cartão CNPJ",
-      description: "Comprovante de Inscrição e Situação Cadastral Ativa na Receita Federal.",
-      fileUrl: "/docs/sobre/cnpj-inrua.pdf", // Usei a versão com traço que vi na tua imagem
-      fileName: "Cartão CNPJ.pdf",
-      date: "Ativo",
+      title: "Projetos Sociais",
+      description:
+        "Execução de ações sociais voltadas à alimentação, moradia e cidadania.",
+      icon: <HeartHandshake size={26} />,
+      color: "from-[#E98C37] to-[#F2D04B]",
     },
     {
-      title: "CND - Federal",
-      description: "Certidão Negativa de Débitos Relativos aos Tributos Federais e à Dívida Ativa da União.",
-      fileUrl: "/docs/sobre/cnd-federal.pdf",
-      fileName: "CND Federal.pdf",
-      date: "Válida",
-    },
-    {
-      title: "CND - Estadual (PR)",
-      description: "Certidão Negativa de Débitos Tributários e de Dívida Ativa Estadual do Paraná.",
-      fileUrl: "/docs/sobre/cnd-estadual.pdf",
-      fileName: "CND Estadual.pdf",
-      date: "Válida",
-    },
-    {
-      title: "CND - Municipal (Curitiba)",
-      description: "Certidão Negativa de Débitos de Tributos Municipais.",
-      fileUrl: "/docs/sobre/cnd-municipal.pdf",
-      fileName: "CND Municipal.pdf",
-      date: "Válida",
-    },
-    {
-      title: "CRF - Regularidade FGTS",
-      description: "Certificado de Regularidade do Fundo de Garantia do Tempo de Serviço - Caixa Econômica.",
-      fileUrl: "/docs/sobre/crf-fgts.pdf",
-      fileName: "CRF - FGTS.pdf",
-      date: "Válida",
-    },
-    {
-      title: "CNDT - Trabalhista",
-      description: "Certidão Negativa de Débitos Trabalhistas emitida pela Justiça do Trabalho.",
-      fileUrl: "/docs/sobre/cndt-trabalhista.pdf",
-      fileName: "CNDT Trabalhista.pdf",
-      date: "Válida",
+      title: "Transparência",
+      description:
+        "Publicação de documentos, relatórios e prestação de contas institucionais.",
+      icon: <FileText size={26} />,
+      color: "from-[#C83E3B] to-[#E98C37]",
     },
   ]
 
   const team = [
-    { name: "Leonildo Jose Monteiro Filho", role: "Presidente", area: "Diretoria Executiva" },
-    { name: "Roselaine Mendes Ferreira", role: "Vice-Presidente", area: "Diretoria Executiva" },
-    { name: "Marcel Jeronymo Lima Oliveira", role: "Tesoureiro", area: "Diretoria Financeira" },
-    { name: "Ana Paula Monteiro de Oliveira", role: "Secretária", area: "Diretoria Administrativa" },
-    { name: "Equipe Técnica", role: "Corpo Técnico", area: "Serviço Social e Psicologia" },
-    { name: "Voluntários", role: "Apoio Operacional", area: "Ações de Rua" },
+    {
+      name: "Thamyres Barbosa",
+      role: "Presidente",
+    },
+    {
+      name: "Andre Barbosa",
+      role: "Vice-Presidente",
+    },
+    {
+      name: "Leonildo",
+      role: "Tesoureiro",
+    },
+    {
+      name: "Raissa Melo",
+      role: "Secretária",
+    },
+  ]
+
+  const documents = [
+    {
+      title: "Estatuto Social",
+      file: "/docs/sobre/estatuto-inrua.pdf",
+      status: "Documento Oficial",
+    },
+    {
+      title: "Ata de Eleição",
+      file: "/docs/sobre/ata-diretoria.pdf",
+      status: "Mandato Vigente",
+    },
+    {
+      title: "Cartão CNPJ",
+      file: "/docs/sobre/cnpj-inrua.pdf",
+      status: "Regular",
+    },
+    {
+      title: "CND Federal",
+      file: "/docs/sobre/cnd-federal.pdf",
+      status: "Válida",
+    },
+    {
+      title: "CND Estadual",
+      file: "/docs/sobre/cnd-estadual.pdf",
+      status: "Válida",
+    },
+    {
+      title: "CND Municipal",
+      file: "/docs/sobre/cnd-municipal.pdf",
+      status: "Válida",
+    },
+    {
+      title: "CRF FGTS",
+      file: "/docs/sobre/crf-fgts.pdf",
+      status: "Regular",
+    },
+    {
+      title: "CNDT Trabalhista",
+      file: "/docs/sobre/cndt-trabalhista.pdf",
+      status: "Regular",
+    },
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
+      {/* FUNDO */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
+
+        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
+
+        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
+      </div>
+
       <Header />
 
-      {/* Hero Banner */}
-      <section className="container-max pt-12">
-        <HeroBanner
-          title="Quem Somos"
-          description="Instituto Nacional de Direitos Humanos da População de Rua (INRUA) - Defendendo direitos fundamentais desde 2016"
-        />
-      </section>
+      {/* HERO */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/movimento2.png"
+            alt="INRUA"
+            className="w-full h-full object-cover"
+          />
 
-      {/* História */}
-      <section className="container-max section-padding">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Nossa História</h2>
-          <div className="space-y-4 text-muted-foreground">
-            <p className="text-lg leading-relaxed">
-              O Instituto Nacional de Direitos Humanos da População de Rua (INRUA) é uma organização sem fins lucrativos
-              que, desde 2016, dedica-se ao apoio às pessoas em situação de rua em todo o Brasil. O instituto oferece
-              assistência em questões fundamentais, como alimentação, cidadania, moradia e acesso às políticas públicas,
-              atuando para garantir dignidade e direitos básicos a essa população.
-            </p>
-            <p className="text-lg leading-relaxed">
-              A criação do INRUA surgiu da demanda direta das pessoas em situação de rua que participaram da construção
-              do projeto durante o 3º Congresso Nacional de População de Rua, realizado em Belo Horizonte, em 2016. O
-              instituto contou com o apoio do Movimento Nacional de População de Rua (MNPR) e de diversas entidades
-              governamentais e não governamentais, consolidando-se como uma organização comprometida com a defesa de
-              direitos.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Desde sua fundação, o INRUA atua com base no Decreto nº 7.503, de 23 de dezembro de 2009, que instituiu a
-              Política Nacional para a População em Situação de Rua. Suas ações também se alinham aos princípios
-              fundamentais da Constituição Federal de 1988, especialmente no que diz respeito à dignidade da pessoa
-              humana e à inclusão social.
+          <div className="absolute inset-0 bg-[#020617]/85" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/60 via-[#4D88C5]/40 to-[#78B84D]/40" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 py-28">
+          <div className="max-w-4xl">
+            <span className="bg-[#F2D04B] text-black px-5 py-2 rounded-full font-black text-sm">
+              SOBRE O INRUA
+            </span>
+
+            <h1 className="text-5xl md:text-7xl font-black mt-8 leading-tight">
+              Quem Somos
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed mt-8 max-w-3xl">
+              O Instituto Nacional de Direitos Humanos da População de Rua
+              atua desde 2016 na promoção da dignidade humana,
+              inclusão social e garantia de direitos fundamentais para
+              pessoas em situação de rua em todo o Brasil.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Missão, Visão e Valores */}
-      <section className="container-max section-padding bg-muted/30">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Missão, Visão e Valores</h2>
+      {/* HISTÓRIA */}
+      <section className="container mx-auto px-6 py-28">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+              Nossa História
+            </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto px-4">
-          <Card className="p-8 h-full">
-            <h3 className="text-2xl font-bold text-primary mb-4">Missão</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Promover defesa, assistência e apoio aos direitos humanos da população em situação de rua, garantindo
-              acesso a alimentação, cidadania, moradia e políticas públicas com total transparência e comprometimento
-              com resultados mensuráveis.
-            </p>
-          </Card>
+            <h2 className="text-5xl font-black mt-4">
+              Compromisso com Direitos Humanos
+            </h2>
+          </div>
 
-          <Card className="p-8 h-full">
-            <h3 className="text-2xl font-bold text-primary mb-4">Visão</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Ser referência nacional na defesa e promoção dos direitos humanos da população em situação de rua,
-              construindo uma sociedade mais justa, inclusiva e humana, onde toda pessoa tenha acesso garantido a
-              direitos fundamentais e oportunidades de vida digna.
-            </p>
-          </Card>
+          <div className="bg-[#111827]/70 backdrop-blur-2xl rounded-[32px] border border-white/10 p-10 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+            <div className="space-y-8 text-lg text-white/80 leading-relaxed">
+              <p>
+                O Instituto Nacional de Direitos Humanos da População de Rua
+                (INRUA) é uma organização sem fins lucrativos que atua na
+                defesa, promoção e garantia de direitos da população em
+                situação de rua.
+              </p>
 
-          <Card className="p-8 h-full">
-            <h3 className="text-2xl font-bold text-primary mb-4">Valores</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Dignidade humana, justiça social, transparência, integridade, sustentabilidade e colaboração em rede com
-              movimentos sociais, governos e organizações parceiras para amplificar impacto.
-            </p>
-          </Card>
+              <p>
+                Fundado em 2016, o instituto nasceu a partir da construção
+                coletiva realizada durante o 3º Congresso Nacional da
+                População em Situação de Rua, consolidando-se como uma
+                organização voltada à inclusão social, cidadania e acesso
+                às políticas públicas.
+              </p>
+
+              <p>
+                O INRUA desenvolve ações sociais, projetos de moradia,
+                capacitação, assistência e fortalecimento de políticas
+                públicas, sempre pautado pelos princípios constitucionais
+                da dignidade humana, justiça social e transparência
+                institucional.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Valores Detalhados */}
-      <section className="container-max section-padding">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Nossos Valores em Ação</h2>
+      {/* MISSÃO VISÃO VALORES */}
+      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#78B84D] font-bold uppercase tracking-widest">
+              Identidade Institucional
+            </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 className="text-5xl font-black mt-4">
+              Missão, Visão e Valores
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Missão",
+                text: "Promover direitos humanos, inclusão social e dignidade para pessoas em situação de rua através de ações concretas e políticas públicas.",
+                color: "from-[#5E5BA6] to-[#4D88C5]",
+              },
+              {
+                title: "Visão",
+                text: "Ser referência nacional em direitos humanos e inclusão social da população em situação de rua.",
+                color: "from-[#78B84D] to-[#4D88C5]",
+              },
+              {
+                title: "Valores",
+                text: "Ética, dignidade humana, justiça social, transparência institucional e responsabilidade social.",
+                color: "from-[#E98C37] to-[#F2D04B]",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-[0_20px_60px_rgba(0,0,0,0.35)]`}
+              >
+                <div className="bg-[#111827] rounded-3xl p-10 h-full">
+                  <h3 className="text-3xl font-black mb-6">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-white/75 leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VALORES */}
+      <section className="container mx-auto px-6 py-28">
+        <div className="text-center mb-16">
+          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            Nossos Valores
+          </span>
+
+          <h2 className="text-5xl font-black mt-4">
+            Valores em Ação
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, idx) => (
-            <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="bg-[#111827]/70 border border-white/10 backdrop-blur-xl rounded-3xl p-8 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+            >
               <div className="flex items-start gap-4">
-                <Check className="text-primary flex-shrink-0 mt-1" size={24} />
+                <div className="bg-[#F2D04B]/20 p-3 rounded-2xl">
+                  <Check className="text-[#F2D04B]" size={24} />
+                </div>
+
                 <div>
-                  <h3 className="font-bold text-lg text-foreground mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
+                  <h3 className="font-black text-xl mb-3">
+                    {value.title}
+                  </h3>
+
+                  <p className="text-white/70 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </div>
             </Card>
@@ -196,102 +315,135 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Áreas de Atuação */}
-      <section className="container-max section-padding bg-muted/30">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Nossas Áreas de Atuação</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          O INRUA atua em diversas frentes para garantir direitos e dignidade à população em situação de rua
-        </p>
+      {/* ÁREAS */}
+      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#78B84D] font-bold uppercase tracking-widest">
+              Atuação Institucional
+            </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Eventos e Projetos</h3>
-            <p className="text-muted-foreground">
-              Criação e execução de eventos, projetos e atividades de orientação sobre direitos humanos e políticas
-              públicas destinadas à população de rua.
-            </p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Capacitação Profissional</h3>
-            <p className="text-muted-foreground">
-              Capacitação de profissionais, consultorias especializadas e formação para potencializar a atuação de
-              agentes públicos e organizações.
-            </p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Políticas Públicas</h3>
-            <p className="text-muted-foreground">
-              Participação direta na elaboração e implementação de políticas públicas em parceria com governos
-              municipais, estaduais e federal.
-            </p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Programa Moradia Primeiro</h3>
-            <p className="text-muted-foreground">
-              Execução do Programa Housing First, promovendo acesso imediato à moradia de forma segura, individual e
-              integrada à comunidade.
-            </p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Pesquisa e Estudos</h3>
-            <p className="text-muted-foreground">
-              Realização de estudos e pesquisas sobre políticas públicas voltadas à população de rua para informar ações
-              estratégicas.
-            </p>
-          </Card>
-          <Card className="p-6">
-            <h3 className="font-bold text-lg text-primary mb-3">Campanhas Inovadoras</h3>
-            <p className="text-muted-foreground">
-              Execução de campanhas e projetos-piloto inovadores para testar novas abordagens e ampliar o acesso a
-              direitos.
-            </p>
-          </Card>
-        </div>
-      </section>
-
-      {/* Estrutura Organizacional */}
-      <section className="container-max section-padding">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Estrutura Organizacional</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Gestão democrática e transparente, eleita em assembleia para o mandato 2023-2026.
-        </p>
-
-        <div className="max-w-7xl mx-auto">
-          {/* Organograma Visual Simplificado */}
-          <div className="mb-16 hidden md:block">
-             <div className="flex flex-col items-center gap-4">
-                 <div className="border-2 border-primary/20 bg-primary/5 px-6 py-2 rounded-lg font-bold text-primary">Assembleia Geral</div>
-                 <div className="h-6 w-0.5 bg-border"></div>
-                 <div className="border-2 border-primary/20 bg-primary/5 px-6 py-2 rounded-lg font-bold text-primary">Diretoria Executiva</div>
-                 <div className="h-6 w-0.5 bg-border"></div>
-                 <div className="flex gap-4">
-                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Conselho Fiscal</div>
-                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Coord. Projetos</div>
-                    <div className="border border-border bg-muted/50 px-4 py-2 rounded text-sm">Apoio Técnico</div>
-                 </div>
-             </div>
+            <h2 className="text-5xl font-black mt-4">
+              Áreas de Atuação
+            </h2>
           </div>
 
-          {/* Equipe Técnica */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, idx) => (
-              <TeamCard key={idx} name={member.name} role={member.role} area={member.area} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {areas.map((area, idx) => (
+              <div
+                key={idx}
+                className={`bg-gradient-to-br ${area.color} rounded-3xl p-[2px]`}
+              >
+                <div className="bg-[#111827] rounded-3xl p-8 h-full">
+                  <div className="mb-6">
+                    {area.icon}
+                  </div>
+
+                  <h3 className="text-2xl font-black mb-4">
+                    {area.title}
+                  </h3>
+
+                  <p className="text-white/75 leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Documentos Institucionais */}
-      <section className="container-max section-padding bg-muted/30">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">Documentos Institucionais</h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Transparência Ativa: Acesse os documentos que comprovam nossa regularidade jurídica e fiscal.
-        </p>
+      {/* DIRETORIA */}
+      <section className="container mx-auto px-6 py-28">
+        <div className="text-center mb-16">
+          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            Gestão Institucional
+          </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {documents.map((doc, idx) => (
-            <DocumentCard key={idx} {...doc} />
+          <h2 className="text-5xl font-black mt-4">
+            Diretoria
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map((member, idx) => (
+            <Card
+              key={idx}
+              className="bg-[#111827]/70 border border-white/10 backdrop-blur-xl rounded-3xl p-8 text-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#5E5BA6] to-[#4D88C5] mx-auto mb-6 flex items-center justify-center">
+                <Users size={30} />
+              </div>
+
+              <h3 className="text-xl font-black">
+                {member.name}
+              </h3>
+
+              <p className="text-[#F2D04B] font-bold mt-2">
+                {member.role}
+              </p>
+            </Card>
           ))}
+        </div>
+      </section>
+
+      {/* DOCUMENTOS */}
+      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#0F172A]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+              Transparência Institucional
+            </span>
+
+            <h2 className="text-5xl font-black mt-4 text-white">
+              Documentos Institucionais
+            </h2>
+
+            <p className="text-white/70 max-w-3xl mx-auto mt-6 text-lg">
+              Em conformidade com a Lei 13.019/2014 (MROSC),
+              disponibilizamos documentos institucionais e certidões
+              públicas para acesso da sociedade.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {documents.map((doc, idx) => (
+              <a
+                key={idx}
+                href={doc.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="bg-[#111827]/70 border border-white/10 backdrop-blur-2xl rounded-3xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:scale-[1.02] hover:border-[#F2D04B]/30 transition-all duration-300 h-full">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="bg-[#F2D04B]/15 p-4 rounded-2xl">
+                      <FileText
+                        className="text-[#F2D04B]"
+                        size={28}
+                      />
+                    </div>
+
+                    <span className="bg-[#78B84D]/15 text-[#78B84D] border border-[#78B84D]/20 px-3 py-1 rounded-full text-xs font-bold">
+                      {doc.status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#F2D04B] transition-colors">
+                    {doc.title}
+                  </h3>
+
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Clique para visualizar ou baixar o documento institucional.
+                  </p>
+
+                  <div className="mt-6 flex items-center text-[#F2D04B] font-bold">
+                    Visualizar Documento →
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
