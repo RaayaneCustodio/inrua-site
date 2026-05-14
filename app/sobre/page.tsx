@@ -139,15 +139,7 @@ export default function SobrePage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
-      {/* FUNDO */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
-
-        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
-
-        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
-      </div>
+    <main className="min-h-screen bg-white text-[#111827] overflow-hidden">
 
       <Header />
 
@@ -160,22 +152,22 @@ export default function SobrePage() {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-[#020617]/85" />
+          <div className="absolute inset-0 bg-white/75" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/60 via-[#4D88C5]/40 to-[#78B84D]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/15 via-[#4D88C5]/10 to-[#78B84D]/10" />
         </div>
 
         <div className="relative z-10 container mx-auto px-6 py-28">
           <div className="max-w-4xl">
-            <span className="bg-[#F2D04B] text-black px-5 py-2 rounded-full font-black text-sm">
+            <span className="bg-[#F2D04B] text-black px-5 py-2 rounded-full font-black text-sm shadow-md">
               SOBRE O INRUA
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-black mt-8 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black mt-8 leading-tight text-[#111827]">
               Quem Somos
             </h1>
 
-            <p className="text-xl text-white/80 leading-relaxed mt-8 max-w-3xl">
+            <p className="text-xl text-[#374151] leading-relaxed mt-8 max-w-3xl">
               O Instituto Nacional de Direitos Humanos da População de Rua
               atua desde 2016 na promoção da dignidade humana,
               inclusão social e garantia de direitos fundamentais para
@@ -189,17 +181,17 @@ export default function SobrePage() {
       <section className="container mx-auto px-6 py-28">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            <span className="text-[#5E5BA6] font-bold uppercase tracking-widest">
               Nossa História
             </span>
 
-            <h2 className="text-5xl font-black mt-4">
+            <h2 className="text-5xl font-black mt-4 text-[#111827]">
               Compromisso com Direitos Humanos
             </h2>
           </div>
 
-          <div className="bg-[#111827]/70 backdrop-blur-2xl rounded-[32px] border border-white/10 p-10 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-            <div className="space-y-8 text-lg text-white/80 leading-relaxed">
+          <div className="bg-[#E5E7EB] rounded-[32px] border border-[#D1D5DB] p-10 md:p-14 shadow-xl">
+            <div className="space-y-8 text-lg text-[#374151] leading-relaxed">
               <p>
                 O Instituto Nacional de Direitos Humanos da População de Rua
                 (INRUA) é uma organização sem fins lucrativos que atua na
@@ -228,14 +220,14 @@ export default function SobrePage() {
       </section>
 
       {/* MISSÃO VISÃO VALORES */}
-      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+      <section className="py-28 bg-[#F8FAFC]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#78B84D] font-bold uppercase tracking-widest">
               Identidade Institucional
             </span>
 
-            <h2 className="text-5xl font-black mt-4">
+            <h2 className="text-5xl font-black mt-4 text-[#111827]">
               Missão, Visão e Valores
             </h2>
           </div>
@@ -260,14 +252,14 @@ export default function SobrePage() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-[0_20px_60px_rgba(0,0,0,0.35)]`}
+                className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-lg`}
               >
-                <div className="bg-[#111827] rounded-3xl p-10 h-full">
-                  <h3 className="text-3xl font-black mb-6">
+                <div className="bg-white rounded-3xl p-10 h-full">
+                  <h3 className="text-3xl font-black mb-6 text-[#111827]">
                     {item.title}
                   </h3>
 
-                  <p className="text-white/75 leading-relaxed">
+                  <p className="text-[#6B7280] leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -280,11 +272,11 @@ export default function SobrePage() {
       {/* VALORES */}
       <section className="container mx-auto px-6 py-28">
         <div className="text-center mb-16">
-          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+          <span className="text-[#5E5BA6] font-bold uppercase tracking-widest">
             Nossos Valores
           </span>
 
-          <h2 className="text-5xl font-black mt-4">
+          <h2 className="text-5xl font-black mt-4 text-[#111827]">
             Valores em Ação
           </h2>
         </div>
@@ -293,7 +285,7 @@ export default function SobrePage() {
           {values.map((value, idx) => (
             <Card
               key={idx}
-              className="bg-[#111827]/70 border border-white/10 backdrop-blur-xl rounded-3xl p-8 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+              className="bg-[#E5E7EB] border border-[#D1D5DB] rounded-3xl p-8 shadow-lg"
             >
               <div className="flex items-start gap-4">
                 <div className="bg-[#F2D04B]/20 p-3 rounded-2xl">
@@ -301,11 +293,11 @@ export default function SobrePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-black text-xl mb-3">
+                  <h3 className="font-black text-xl mb-3 text-[#111827]">
                     {value.title}
                   </h3>
 
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-[#6B7280] leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -316,14 +308,14 @@ export default function SobrePage() {
       </section>
 
       {/* ÁREAS */}
-      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+      <section className="py-28 bg-[#F8FAFC]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#78B84D] font-bold uppercase tracking-widest">
               Atuação Institucional
             </span>
 
-            <h2 className="text-5xl font-black mt-4">
+            <h2 className="text-5xl font-black mt-4 text-[#111827]">
               Áreas de Atuação
             </h2>
           </div>
@@ -332,18 +324,18 @@ export default function SobrePage() {
             {areas.map((area, idx) => (
               <div
                 key={idx}
-                className={`bg-gradient-to-br ${area.color} rounded-3xl p-[2px]`}
+                className={`bg-gradient-to-br ${area.color} rounded-3xl p-[2px] shadow-lg`}
               >
-                <div className="bg-[#111827] rounded-3xl p-8 h-full">
-                  <div className="mb-6">
+                <div className="bg-white rounded-3xl p-8 h-full">
+                  <div className="mb-6 text-[#111827]">
                     {area.icon}
                   </div>
 
-                  <h3 className="text-2xl font-black mb-4">
+                  <h3 className="text-2xl font-black mb-4 text-[#111827]">
                     {area.title}
                   </h3>
 
-                  <p className="text-white/75 leading-relaxed">
+                  <p className="text-[#6B7280] leading-relaxed">
                     {area.description}
                   </p>
                 </div>
@@ -356,11 +348,11 @@ export default function SobrePage() {
       {/* DIRETORIA */}
       <section className="container mx-auto px-6 py-28">
         <div className="text-center mb-16">
-          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+          <span className="text-[#5E5BA6] font-bold uppercase tracking-widest">
             Gestão Institucional
           </span>
 
-          <h2 className="text-5xl font-black mt-4">
+          <h2 className="text-5xl font-black mt-4 text-[#111827]">
             Diretoria
           </h2>
         </div>
@@ -369,17 +361,17 @@ export default function SobrePage() {
           {team.map((member, idx) => (
             <Card
               key={idx}
-              className="bg-[#111827]/70 border border-white/10 backdrop-blur-xl rounded-3xl p-8 text-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+              className="bg-[#E5E7EB] border border-[#D1D5DB] rounded-3xl p-8 text-center shadow-lg"
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#5E5BA6] to-[#4D88C5] mx-auto mb-6 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#5E5BA6] to-[#4D88C5] mx-auto mb-6 flex items-center justify-center text-white">
                 <Users size={30} />
               </div>
 
-              <h3 className="text-xl font-black">
+              <h3 className="text-xl font-black text-[#111827]">
                 {member.name}
               </h3>
 
-              <p className="text-[#F2D04B] font-bold mt-2">
+              <p className="text-[#5E5BA6] font-bold mt-2">
                 {member.role}
               </p>
             </Card>
@@ -388,18 +380,18 @@ export default function SobrePage() {
       </section>
 
       {/* DOCUMENTOS */}
-      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#0F172A]">
+      <section className="py-28 bg-[#F8FAFC]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+            <span className="text-[#5E5BA6] font-bold uppercase tracking-widest">
               Transparência Institucional
             </span>
 
-            <h2 className="text-5xl font-black mt-4 text-white">
+            <h2 className="text-5xl font-black mt-4 text-[#111827]">
               Documentos Institucionais
             </h2>
 
-            <p className="text-white/70 max-w-3xl mx-auto mt-6 text-lg">
+            <p className="text-[#6B7280] max-w-3xl mx-auto mt-6 text-lg">
               Em conformidade com a Lei 13.019/2014 (MROSC),
               disponibilizamos documentos institucionais e certidões
               públicas para acesso da sociedade.
@@ -415,29 +407,52 @@ export default function SobrePage() {
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="bg-[#111827]/70 border border-white/10 backdrop-blur-2xl rounded-3xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:scale-[1.02] hover:border-[#F2D04B]/30 transition-all duration-300 h-full">
+                <div
+                  className="
+                    bg-[#E5E7EB]
+                    border border-[#D1D5DB]
+                    rounded-3xl
+                    p-8
+                    shadow-lg
+                    hover:shadow-2xl
+                    hover:scale-[1.02]
+                    transition-all
+                    duration-300
+                    h-full
+                  "
+                >
                   <div className="flex items-start justify-between mb-6">
-                    <div className="bg-[#F2D04B]/15 p-4 rounded-2xl">
+                    <div className="bg-[#5E5BA6]/10 p-4 rounded-2xl">
                       <FileText
-                        className="text-[#F2D04B]"
+                        className="text-[#5E5BA6]"
                         size={28}
                       />
                     </div>
 
-                    <span className="bg-[#78B84D]/15 text-[#78B84D] border border-[#78B84D]/20 px-3 py-1 rounded-full text-xs font-bold">
+                    <span
+                      className="
+                        bg-[#78B84D]/15
+                        text-[#78B84D]
+                        border border-[#78B84D]/20
+                        px-3 py-1
+                        rounded-full
+                        text-xs
+                        font-bold
+                      "
+                    >
                       {doc.status}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#F2D04B] transition-colors">
+                  <h3 className="text-2xl font-black text-[#111827] mb-4 group-hover:text-[#5E5BA6] transition-colors">
                     {doc.title}
                   </h3>
 
-                  <p className="text-white/70 text-sm leading-relaxed">
+                  <p className="text-[#6B7280] text-sm leading-relaxed">
                     Clique para visualizar ou baixar o documento institucional.
                   </p>
 
-                  <div className="mt-6 flex items-center text-[#F2D04B] font-bold">
+                  <div className="mt-6 flex items-center text-[#5E5BA6] font-bold">
                     Visualizar Documento →
                   </div>
                 </div>

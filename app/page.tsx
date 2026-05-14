@@ -65,15 +65,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#0F172A] text-white overflow-hidden">
-      {/* EFEITOS DE FUNDO */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-[#5E5BA6]/30 rounded-full blur-3xl" />
-
-        <div className="absolute top-[30%] right-[-100px] w-[500px] h-[500px] bg-[#4D88C5]/20 rounded-full blur-3xl" />
-
-        <div className="absolute bottom-[-100px] left-[20%] w-[500px] h-[500px] bg-[#78B84D]/20 rounded-full blur-3xl" />
-      </div>
+    <main className="min-h-screen bg-white text-[#111827] overflow-hidden">
 
       <Header />
 
@@ -86,22 +78,22 @@ export default function Home() {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-[#020617]/85" />
+          <div className="absolute inset-0 bg-white/70" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/70 via-[#4D88C5]/40 to-[#78B84D]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#5E5BA6]/20 via-[#4D88C5]/10 to-[#78B84D]/10" />
         </div>
 
         <div className="relative z-10 container mx-auto px-6 py-24">
           <div className="max-w-5xl">
-            <div className="inline-flex items-center gap-2 bg-[#F2D04B] text-black px-5 py-2 rounded-full font-bold shadow-2xl">
+            <div className="inline-flex items-center gap-2 bg-[#F2D04B] text-black px-5 py-2 rounded-full font-bold shadow-lg">
               Transparência • Direitos Humanos • Inclusão Social
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8 text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8 text-[#111827]">
               Instituto Nacional de Direitos Humanos da População de Rua
             </h1>
 
-            <p className="text-xl text-white/80 mt-8 leading-relaxed max-w-3xl">
+            <p className="text-xl text-[#374151] mt-8 leading-relaxed max-w-3xl">
               Desde 2016 promovendo dignidade, inclusão social e defesa dos
               direitos da população em situação de rua através de ações
               concretas, projetos sociais e políticas públicas.
@@ -109,7 +101,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4 mt-10">
               <Link href="/transparencia">
-                <Button className="bg-[#F2D04B] hover:bg-[#E98C37] text-black font-black px-8 py-6 text-lg rounded-2xl shadow-[0_20px_60px_rgba(242,208,75,0.35)]">
+                <Button className="bg-[#5E5BA6] hover:bg-[#4D88C5] text-white font-black px-8 py-6 text-lg rounded-2xl shadow-lg">
                   Área de Transparência
                 </Button>
               </Link>
@@ -117,7 +109,7 @@ export default function Home() {
               <Link href="/acoes">
                 <Button
                   variant="outline"
-                  className="border-white/30 bg-white/10 backdrop-blur-xl text-white hover:bg-white hover:text-black px-8 py-6 text-lg rounded-2xl"
+                  className="border-[#5E5BA6]/30 bg-white text-[#111827] hover:bg-[#5E5BA6] hover:text-white px-8 py-6 text-lg rounded-2xl"
                 >
                   Conheça Nossos Projetos
                 </Button>
@@ -130,15 +122,15 @@ export default function Home() {
       {/* IMPACTO */}
       <section className="container mx-auto px-6 py-28">
         <div className="text-center mb-16">
-          <span className="text-[#F2D04B] font-bold uppercase tracking-widest">
+          <span className="text-[#5E5BA6] font-bold uppercase tracking-widest">
             Impacto Social
           </span>
 
-          <h2 className="text-5xl font-black mt-4">
+          <h2 className="text-5xl font-black mt-4 text-[#111827]">
             Nosso Impacto em Números
           </h2>
 
-          <p className="text-lg text-white/70 max-w-3xl mx-auto mt-6">
+          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto mt-6">
             Trabalhamos diariamente para garantir direitos fundamentais,
             inclusão social e dignidade humana.
           </p>
@@ -148,22 +140,22 @@ export default function Home() {
           {highlights.map((item, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] hover:scale-[1.03] transition-all duration-300`}
+              className={`bg-gradient-to-br ${item.color} rounded-3xl p-[2px] shadow-lg hover:scale-[1.03] transition-all duration-300`}
             >
-              <div className="bg-[#111827] rounded-3xl p-8 h-full min-h-[320px] flex flex-col">
-                <div className="mb-6 text-white">
+              <div className="bg-white rounded-3xl p-8 h-full min-h-[320px] flex flex-col">
+                <div className="mb-6 text-[#111827]">
                   {item.icon}
                 </div>
 
-                <h3 className="text-5xl font-black mb-3 text-white">
+                <h3 className="text-5xl font-black mb-3 text-[#111827]">
                   {item.value}
                 </h3>
 
-                <p className="font-bold text-lg mb-4 text-white">
+                <p className="font-bold text-lg mb-4 text-[#111827]">
                   {item.label}
                 </p>
 
-                <p className="text-white/70 text-sm leading-relaxed mt-auto">
+                <p className="text-[#6B7280] text-sm leading-relaxed mt-auto">
                   {item.description}
                 </p>
               </div>
@@ -173,18 +165,18 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section className="py-28 bg-gradient-to-b from-[#111827] to-[#172554]">
+      <section className="py-28 bg-[#F8FAFC]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#78B84D] font-bold uppercase tracking-widest">
               Projetos Sociais
             </span>
 
-            <h2 className="text-5xl font-black mt-4">
+            <h2 className="text-5xl font-black mt-4 text-[#111827]">
               Projetos e Ações
             </h2>
 
-            <p className="text-lg text-white/70 max-w-3xl mx-auto mt-6">
+            <p className="text-lg text-[#6B7280] max-w-3xl mx-auto mt-6">
               Conheça nossas iniciativas voltadas à garantia de direitos e
               inclusão da população em situação de rua.
             </p>
@@ -194,7 +186,7 @@ export default function Home() {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className="group overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.45)] hover:-translate-y-2 transition-all duration-500"
+                className="group overflow-hidden rounded-3xl bg-white shadow-xl hover:-translate-y-2 transition-all duration-500"
               >
                 <div className="relative h-80 overflow-hidden">
                   <img
@@ -203,7 +195,7 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                   <div className="absolute bottom-0 p-6 text-white">
                     <span className="bg-[#F2D04B] text-black px-3 py-1 rounded-full text-xs font-black">
@@ -221,7 +213,7 @@ export default function Home() {
 
           <div className="flex justify-center mt-14">
             <Link href="/acoes">
-              <Button className="bg-[#5E5BA6] hover:bg-[#4D88C5] text-white px-8 py-6 rounded-2xl text-lg font-black shadow-[0_20px_60px_rgba(94,91,166,0.45)]">
+              <Button className="bg-[#5E5BA6] hover:bg-[#4D88C5] text-white px-8 py-6 rounded-2xl text-lg font-black shadow-lg">
                 Ver Todos os Projetos
               </Button>
             </Link>
@@ -230,19 +222,17 @@ export default function Home() {
       </section>
 
       {/* TRANSPARÊNCIA */}
-      <section className="py-20 md:py-28 bg-gradient-to-r from-[#5E5BA6] via-[#4D88C5] to-[#78B84D] relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="py-20 md:py-28 bg-[#EEF2F7] relative overflow-hidden">
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div
             className="
-        bg-[#111827]/50
-        backdrop-blur-2xl
-        rounded-[28px] md:rounded-[32px]
-        p-6 sm:p-8 md:p-12
-        border border-white/10
-        shadow-[0_20px_80px_rgba(0,0,0,0.35)]
-      "
+              bg-[#F8FAFC]
+              rounded-[28px] md:rounded-[32px]
+              p-6 sm:p-8 md:p-12
+              border border-[#E5E7EB]
+              shadow-xl
+            "
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-center">
 
@@ -250,41 +240,41 @@ export default function Home() {
               <div className="text-center lg:text-left">
                 <span
                   className="
-              inline-block
-              bg-[#F2D04B]
-              text-black
-              px-4 py-2
-              rounded-full
-              font-black
-              text-xs sm:text-sm
-            "
+                    inline-block
+                    bg-[#F2D04B]
+                    text-black
+                    px-4 py-2
+                    rounded-full
+                    font-black
+                    text-xs sm:text-sm
+                  "
                 >
                   LEI 13.019/2014 • MROSC
                 </span>
 
                 <h2
                   className="
-              text-3xl
-              sm:text-4xl
-              md:text-5xl
-              font-black
-              text-white
-              mt-6
-              mb-6
-              leading-tight
-            "
+                    text-3xl
+                    sm:text-4xl
+                    md:text-5xl
+                    font-black
+                    text-[#111827]
+                    mt-6
+                    mb-6
+                    leading-tight
+                  "
                 >
                   Transparência Institucional
                 </h2>
 
                 <p
                   className="
-              text-white/80
-              text-base sm:text-lg
-              leading-relaxed
-              max-w-2xl
-              mx-auto lg:mx-0
-            "
+                    text-[#6B7280]
+                    text-base sm:text-lg
+                    leading-relaxed
+                    max-w-2xl
+                    mx-auto lg:mx-0
+                  "
                 >
                   Disponibilizamos publicamente relatórios financeiros,
                   documentos institucionais, informações de prestação
@@ -295,18 +285,18 @@ export default function Home() {
                 <Link href="/transparencia">
                   <Button
                     className="
-                mt-8
-                w-full sm:w-auto
-                bg-[#F2D04B]
-                hover:bg-[#E98C37]
-                text-black
-                font-black
-                px-6 sm:px-8
-                py-5 sm:py-6
-                rounded-2xl
-                text-base sm:text-lg
-                shadow-[0_20px_60px_rgba(242,208,75,0.35)]
-              "
+                      mt-8
+                      w-full sm:w-auto
+                      bg-[#5E5BA6]
+                      hover:bg-[#4D88C5]
+                      text-white
+                      font-black
+                      px-6 sm:px-8
+                      py-5 sm:py-6
+                      rounded-2xl
+                      text-base sm:text-lg
+                      shadow-lg
+                    "
                   >
                     Acessar Portal de Transparência
                   </Button>
@@ -324,23 +314,22 @@ export default function Home() {
                   <div
                     key={item}
                     className="
-                    bg-white/10
-                    backdrop-blur-xl
-                    border border-white/20
-                    rounded-2xl
-                    p-5 sm:p-7
-                    text-white
-                    font-bold
-                    text-center
-                    text-sm sm:text-base
-                    shadow-xl
-                    hover:bg-white/20
-                    transition-all
-                    min-h-[100px]
-                    flex
-                    items-center
-                    justify-center
-                  "
+                      bg-white
+                      border border-[#E5E7EB]
+                      rounded-2xl
+                      p-5 sm:p-7
+                      text-[#111827]
+                      font-bold
+                      text-center
+                      text-sm sm:text-base
+                      shadow-md
+                      hover:shadow-xl
+                      transition-all
+                      min-h-[100px]
+                      flex
+                      items-center
+                      justify-center
+                    "
                   >
                     {item}
                   </div>
